@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
 
+import "../../public/assets/fonts/aileron/stylesheet.css"
+import "../../public/assets/fonts/inter/stylesheet.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "animate.css/animate.min.css";

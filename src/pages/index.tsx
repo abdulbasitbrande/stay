@@ -5,7 +5,7 @@ export default function Home() {
     <Layout mainClass="homepage">
       <section className="hero">
         <div className="container">
-          <h1 className="wow animate__animated">
+          <h1 className="wow animate__animated animate__shakeX animate__infinite">
             Hi There! <span className="wave-hand">👋</span>
           </h1>
         </div>
