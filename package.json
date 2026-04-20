@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
     "jquery": "^4.0.0",
     "lucide-react": "^1.8.0",
