@@ -52,12 +52,13 @@
   right: 0px;
   /* width: 100%; */
   /* height: 100%; */
-  width: 106%;
-  height: 140px;
+  width: 105%;
+  height: 135px;
 }
 
 .search-bar-wrapper .row {
   position: relative;
+  z-index: 1;
 }
 
 .object-fit-cover {

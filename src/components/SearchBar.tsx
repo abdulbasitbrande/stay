@@ -70,7 +70,6 @@ const SearchBar = () => {
         id="formshapebg"
         preserveAspectRatio="none"
         viewBox="0 0 1103 117"
-
       >
         <path
           d="M1102.79 116.934H0C8.52545 116.934 16.7203 113.634 22.8672 107.727L91.04 42.207C97.1868 36.2994 105.382 33 113.907 33H1069.79C1088.01 33 1102.79 18.2253 1102.79 0V116.934Z"
@@ -115,10 +114,7 @@ const SearchBar = () => {
         </div>
 
         <div className="col-auto p-1">
-          <button
-            type="submit"
-            className="btn btn-dark px-5 py-2 fw-bold text-uppercase rounded-1"
-          >
+          <button type="submit" className="butn butn-primary-filled ">
             Search
           </button>
         </div>
