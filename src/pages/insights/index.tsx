@@ -1,9 +1,11 @@
-
+import Link from "next/link";
 
 export const insights = () => {
   return (
-    <div>index</div>
-  )
-}
+    <div>
+      <Link href={"/"}>Home</Link>
+    </div>
+  );
+};
 
-export default insights
+export default insights;
