@@ -74,7 +74,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 3.428571em;
 }
 
 h3 {
@@ -93,6 +93,33 @@ h6 {
   font-size: 1.1428571em;
 }
 
+
+/* Section Title */
+.sec-title {
+  &.\--is-medium {
+    max-width: 60%;
+  }
+
+  &.has-spacing {
+    margin-bottom: 40px;
+
+    &.\--small {
+      margin-bottom: 20px;
+    }
+
+    &.\--medium {
+      margin-bottom: 30px;
+    }
+
+    &.\--large {
+      margin-bottom: 50px;
+    }
+
+    &.\--xlarge {
+      margin-bottom: 60px;
+    }
+  }
+}
 
 /* Buttons */
 
@@ -264,7 +291,36 @@ h6 {
 }
 
 
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--theme-secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary-color);
+  transition: 0.4s all;
+  
+  svg {
+    width: 18px;
+    transition: 0.4s all;
 
+    * {
+      transition: 0.4s all;
+    }
+  }
+
+  &:hover {
+    background-color: var(--theme-primary-color);
+
+    svg {
+      path {
+        stroke: white;
+      }
+    }
+  }
+}
 
 .read-more-btn {
   overflow: hidden;
@@ -312,6 +368,31 @@ h6 {
 }
 
 /* Buttons */
+
+/* Fit Image */
+.fit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sorting Filter */
+.sorting-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 7px;
+
+  .custom-select__dropdown-indicator {
+    color: var(--theme-primary-color);
+  }
+
+  .custom-select__control {
+    border: 1px solid var(--theme-primary-color) !important;
+    border-radius: 6px;
+    padding: 0 10px 0 20px;
+  }
+}
 
 /* HEADER */
 
@@ -403,6 +484,7 @@ header {
             transform: translateY(5px);
             transition: 0.4s all;
             box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+            z-index: 1;
 
             li {
               a {
@@ -422,8 +504,8 @@ header {
 
               &:hover {
                 a {
-                  /* // color: var(--theme-primary-color); */
-                  background-color: var(--theme-tertiary-color);
+                  color: var(--theme-primary-color);
+                  background-color: var(--theme-secondary-color);
                 }
               }
             }
@@ -723,12 +805,6 @@ header {
 
 }
 
-
-.hero{
-  height: 100vh;
-  background-color: var(--theme-secondary-color);
-}
-
 /* FOOTER */
 
 .footer-sec {
@@ -815,11 +891,12 @@ header {
     a {
       color: var(--theme-primary-color);
     }
-    .fb-col{
+
+    .fb-col {
       flex: 0 0 33.33%;
     }
 
-    
+
 
     .footer-social-links {
       display: flex;
