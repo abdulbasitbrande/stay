@@ -49,20 +49,6 @@ const SearchBar = () => {
         />
       </svg>
 
-      {/* <svg
-        width="1099"
-        height="120"
-        id="formshapebg"
-        preserveAspectRatio="none"
-        viewBox="0 0 1099 120"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M86.93 47.3644L20.8217 111.098C15.2304 116.488 7.76655 119.5 2.28882e-05 119.5H1094.11L1098.61 0C1097.11 14.3333 1085.81 41.6 1052.61 36L107.658 38.9622C99.9237 38.9865 92.4979 41.9966 86.93 47.3644Z"
-          fill="white"
-        />
-      </svg> */}
-
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1103"
@@ -78,7 +64,7 @@ const SearchBar = () => {
       </svg>
 
       <div className="row g-0 align-items-center h-100 px-3">
-        <div className="col-md-2 border-end d-flex align-items-center px-3">
+        <div className="col-md-3 border-end d-flex align-items-center px-3">
           <Home size={18} className="me-2 text-secondary" />
 
           <Select
