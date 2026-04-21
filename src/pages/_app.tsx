@@ -12,6 +12,7 @@ import "animate.css/animate.min.css";
 
 import "@/styles/globals.css";
 import "@/styles/main.css";
+import "@/styles/u-main.css";
 import "@/styles/responsive.css";
 
 import WOWInit from "@/components/WOWInit";

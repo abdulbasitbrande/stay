@@ -1,0 +1,50 @@
+/* Insights Section */
+.tab-links-wrapper {
+    margin-bottom: 40px;
+}
+
+.insights-sec {
+    .custom-space {
+        margin-left: -30px;
+
+        .mainbox {
+            margin-left: 32px;
+        }
+    }
+
+    .mainbox {
+        .imgbox {
+            aspect-ratio: 1/0.75;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 15px;
+
+            img {
+                transition: 0.4s all;
+            }
+        }
+
+        .contentbox {
+            .blog-date {
+                margin-bottom: 10px;
+            }
+
+            .blog-title {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                /* Limit to 3 lines */
+                overflow: hidden;
+                margin-bottom: 15px;
+            }
+        }
+
+        &:hover {
+            .imgbox {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
