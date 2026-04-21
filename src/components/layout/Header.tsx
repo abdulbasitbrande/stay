@@ -20,49 +20,49 @@ export default function Header() {
               <nav className="header-menu">
                 <ul className="menu-wrapper">
                   <li>
-                    <Link href="#">Buy</Link>
+                    <Link href="/">Buy</Link>
                   </li>
                   <li>
-                    <Link href="#">Rent</Link>
+                    <Link href="/">Rent</Link>
                   </li>
                   <li>
-                    <Link href="#">Off-Plan</Link>
+                    <Link href="/">Off-Plan</Link>
                   </li>
                   <li>
-                    <Link href="#">Property Management</Link>
+                    <Link href="/">Property Management</Link>
                   </li>
                   <li>
-                    <Link href="#">Estimate My Property</Link>
+                    <Link href="/">Estimate My Property</Link>
                   </li>
                   <li className="menu-item-has-children">
-                    <Link href="#">More</Link>
+                    <Link href="/">More</Link>
                     <ul className="sub-menu">
                       <li>
-                        <Link href="#">Link 01</Link>
+                        <Link href="/">Link 01</Link>
                       </li>
                       <li>
-                        <Link href="#">Link 02</Link>
+                        <Link href="/">Link 02</Link>
                       </li>
                       <li>
-                        <Link href="#">Link 03</Link>
+                        <Link href="/">Link 03</Link>
                       </li>
                       <li>
-                        <Link href="#">Link 04</Link>
+                        <Link href="/">Link 04</Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <Link href="#">Contact</Link>
+                    <Link href="/">Contact</Link>
                   </li>
                 </ul>
               </nav>
               <div className="header-actions">
-                <Link className="header-action butn butn-primary" href="#">
+                <Link className="header-action butn butn-primary" href="/">
                   <span>Book With Us</span>
                 </Link>
                 <Link
                   className="header-action butn butn-primary-filled has-icon"
-                  href="#"
+                  href="/"
                 >
                   <span>
                     <svg
@@ -84,7 +84,7 @@ export default function Header() {
                     log in
                   </span>
                 </Link>
-                <Link className="header-action header-wa-btn" href="#">
+                <Link className="header-action header-wa-btn" href="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="40"
@@ -170,43 +170,43 @@ export default function Header() {
           </div>
           <ul className="header-nav list-unstyled m-0 p-0">
             <li>
-              <Link href="#">Buy</Link>
+              <Link href="/">Buy</Link>
             </li>
             <li>
-              <Link href="#">Rent</Link>
+              <Link href="/">Rent</Link>
             </li>
             <li>
-              <Link href="#">Off-Plan</Link>
+              <Link href="/">Off-Plan</Link>
             </li>
             <li>
-              <Link href="#">Property Management</Link>
+              <Link href="/">Property Management</Link>
             </li>
             <li>
-              <Link href="#">Estimate My Property</Link>
+              <Link href="/">Estimate My Property</Link>
             </li>
             <li className="menu-item-has-children">
-              <Link href="#">More</Link>
+              <Link href="/">More</Link>
               <ul className="sub-menu">
                 <li>
-                  <Link href="#">Facility 01</Link>
+                  <Link href="/">Facility 01</Link>
                 </li>
                 <li>
-                  <Link href="#">Facility 02</Link>
+                  <Link href="/">Facility 02</Link>
                 </li>
                 <li>
-                  <Link href="#">Facility 03</Link>
+                  <Link href="/">Facility 03</Link>
                 </li>
                 <li>
-                  <Link href="#">Facility 04</Link>
+                  <Link href="/">Facility 04</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="#">Contact</Link>
+              <Link href="/">Contact</Link>
             </li>
           </ul>
           <div className="social-links">
-            <Link className="social-link" href="#">
+            <Link className="social-link" href="/">
               <i className="fab fa-facebook-f"></i>
             </Link>
           </div>

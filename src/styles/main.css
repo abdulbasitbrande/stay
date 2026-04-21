@@ -102,4 +102,39 @@ input::placeholder {
   background-color: #212529 !important;
 }
 
+.search-bar-wrapper svg {
+  color: #000 !important;
+}
+
+.custom-select__indicator svg {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.search-bar-wrapper .row > div {
+  border-color: #000 !important;
+}
+
 /* HERO */
+
+/* CATEGORY BUTTONS */
+
+.category-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  color: #888;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.category-btn.active {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-color: #2d2d2d;
+}
+
+/* CATEGORY BUTTONS */
