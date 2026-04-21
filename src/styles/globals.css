@@ -17,6 +17,9 @@
 
 }
 
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -32,6 +35,25 @@ body {
   text-align: left;
   background-color: #fff;
   overflow-x: hidden !important;
+}
+
+
+/* Backgrounf Colors */
+
+.sec-bg-primary-light {
+  background: var(--theme-primary-light-color);
+}
+
+.sec-bg-primary-lighter {
+  background: var(--theme-primary-lighter-color);
+}
+
+.sec-bg-primary {
+  background: var(--theme-primary-color);
+}
+
+.sec-bg-secondary {
+  background: var(--theme-secondary-color);
 }
 
 .h1,
@@ -130,7 +152,7 @@ h6 {
   color: var(--theme-primary-color);
   border: 1px solid var(--theme-primary-light-color);
   /* // text-transform: uppercase; */
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   text-decoration: none !important;
   position: relative;
@@ -301,7 +323,7 @@ h6 {
   justify-content: center;
   color: var(--theme-primary-color);
   transition: 0.4s all;
-  
+
   svg {
     width: 18px;
     transition: 0.4s all;
@@ -804,6 +826,47 @@ header {
   }
 
 }
+
+
+/* Form CTA */
+.form-wrapper {
+  .row {
+    margin-left: -8px;
+  }
+
+  .input-wrapper {
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-left: 8px;
+
+    label {
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 0.5px solid #B7B7B7;
+      background-color: unset;
+      border-radius: 6px;
+      transition: 0.4s all;
+      outline: none;
+      font-weight: 300;
+
+      &:hover {
+        border-color: var(--theme-font-primary);
+      }
+    }
+  }
+
+  .submit-btn {
+    margin-top: 20px;
+  }
+}
+
 
 /* FOOTER */
 

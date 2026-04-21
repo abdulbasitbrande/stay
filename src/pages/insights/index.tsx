@@ -1,10 +1,16 @@
+import CategorySelector from '@/components/CategorySelector';
 import Layout from '@/components/layout/Layout';
+import BlogCard from '@/components/sections/BlogCard';
+import FormCta from '@/components/sections/FormCta';
 import SortFilter from '@/components/SortFilter';
+import { blogs } from '@/mockdata/insights/blogcard';
+import { blogCategories } from '@/mockdata/insights/blogcategories';
 import Link from 'next/link';
 
-export const Insights = (props) => {
+export const Insights = () => {
   return (
     <Layout>
+      {/* Insights Section Start */}
       <section className="insights-sec blog-cards-sec sec-padding --small">
         <div className="container">
           <div className="sec-title --is-medium has-spacing has-scroll-animation">
@@ -12,45 +18,35 @@ export const Insights = (props) => {
           </div>
           <div className="tab-links-wrapper d-flex justify-content-between">
             <div className="tab-links">
+              <CategorySelector
+                options={blogCategories}
+                defaultValue="blog"
+              />
             </div>
             <SortFilter />
           </div>
           <div className="row g-0 custom-space">
-            <div className="col-lg-4">
-              <Link className='mainbox d-block' href='#'>
-                <div className="imgbox">
-                  <img className='fit-img' src="/assets/images/blog-img-1.jpg" alt="" />
+            {
+              blogs.map((blog) => (
+                <div className="col-lg-4 col-md-6 col-sm-6">
+                  <BlogCard
+                    id={blog.id}
+                    title={blog.title}
+                    date={blog.date}
+                    image={blog.image}
+                    slug={blog.slug}
+                  />
                 </div>
-                <div className="contentbox">
-                  <span className='blog-date d-block'>DECEMBER 26, 2024</span>
-                  <h4 className='text-uppercase blog-title'>2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market</h4>
-                  <span className='arrow-btn'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-              </Link>
-            </div>
-            <div className="col-lg-4">
-              <Link className='mainbox d-block' href='#'>
-                <div className="imgbox">
-                  <img className='fit-img' src="/assets/images/blog-img-2.jpg" alt="" />
-                </div>
-                <div className="contentbox">
-                  <span className='blog-date d-block'>DECEMBER 26, 2024</span>
-                  <h4 className='text-uppercase blog-title'>2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market</h4>
-                  <span className='arrow-btn'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-              </Link>
-            </div>
+              ))
+            }
           </div>
         </div>
       </section>
+      {/* Insights Section Start */}
+
+      {/* Form CTA Section Start */}
+      <FormCta  />
+      {/* Form CTA Section End */}
     </Layout>
   );
 }
