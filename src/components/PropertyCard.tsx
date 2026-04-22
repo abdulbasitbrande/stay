@@ -11,7 +11,7 @@ const PropertyCard = ({ property }: Props) => {
 
   return (
     <div
-      className={`card border-0 shadow-sm h-100 ${
+      className={`card border-0 h-100 ${
         variant === "large" ? "flex-md-row" : ""
       }`}
     >
@@ -27,22 +27,22 @@ const PropertyCard = ({ property }: Props) => {
       </div>
 
       {/* CONTENT */}
-      <div className="card-body p-3 d-flex flex-column justify-content-between">
+      <div className="card-body d-flex flex-column justify-content-between">
         {/* PRICE */}
         {property.price && (
-          <h5 className="text-primary fw-bold">{property.price}</h5>
+          <h3 className="text-primary fw-bold">{property.price}</h3>
         )}
 
         {/* TITLE */}
-        <h6 className="fw-bold mb-2">{property.title}</h6>
+        <h5 className="mb-2">{property.title}</h5>
 
         {/* DESCRIPTION */}
-        <p className="text-muted small mb-3">{property.description}</p>
+        <p className="text-muted mb-1">{property.description}</p>
 
         {/* TAGS */}
         <div className="d-flex flex-wrap gap-2 mb-3">
           {property.tags.map((tag, i) => (
-            <span key={i} className="badge bg-light text-dark border">
+            <span key={i} className="badge">
               {tag}
             </span>
           ))}
@@ -55,8 +55,16 @@ const PropertyCard = ({ property }: Props) => {
 
         {/* ACTION BUTTONS */}
         <div className="d-flex gap-2">
-          <button className="btn btn-outline-dark btn-sm w-100">Call</button>
-          <button className="btn btn-outline-success btn-sm w-100">
+          <button className="action-btns call-btn">
+            <span>
+              <img src="assets/images/cal.svg" alt="" className="me-2" />
+            </span>
+            Call
+          </button>
+          <button className="action-btns wahtsapp-btn">
+            <span>
+              <img src="assets/images/whatsapp1.svg" alt="" className="me-2" />
+            </span>
             WhatsApp
           </button>
           {variant !== "small" && (

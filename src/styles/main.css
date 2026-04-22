@@ -138,3 +138,201 @@ input::placeholder {
 }
 
 /* CATEGORY BUTTONS */
+
+/* HOME PROJECTS */
+
+.project-section .card h5 {
+  font-family: "Inter";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.project-section .card span.badge {
+  background: transparent;
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #9f9f9f;
+  color: #9f9f9f;
+  font-weight: 400;
+}
+
+.project-section .card {
+  background: #f3f3f3;
+}
+
+.project-section .card .card-body {
+  padding: 25px 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.project-section .card .action-btns {
+  text-transform: uppercase;
+  background: #fff;
+  border: 0;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 20px;
+  font-family: Aileron;
+  font-weight: 600;
+  transition: 0.4s ease all;
+}
+
+.project-section .card .action-btns:hover {
+  filter: invert(1) brightness(1.5);
+}
+
+.project-section {
+  position: relative;
+}
+
+.project-section .swiper-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.project-section .swiper-nav-left {
+  left: -110px;
+}
+
+.project-section .swiper-nav-right {
+  right: -110px;
+}
+
+.project-section .swiper-nav:hover svg path {
+  stroke: #000;
+}
+
+.smartcard-section .ico-box-wrapper .icon-box {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 80px 20px;
+  display: flex;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.smartcard-section .ico-box-wrapper .icon-box svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.smartcard-section .ico-box-wrapper .icon-box img {
+  position: relative;
+  width: 177px;
+  height: 177px;
+  z-index: 1;
+}
+
+.smartcard-section .ico-box-wrapper:nth-child(2) .icon-box img {
+  height: 219px;
+}
+
+.smartcard-section .ico-box-wrapper .feature-title {
+  font-family: "Inter";
+}
+
+.smartcard-section .ico-box-wrapper .feature-desc {
+  padding-right: 40px;
+}
+
+.location-grid {
+  column-count: 4;
+  column-gap: 20px;
+  direction: rtl;
+}
+
+.location-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.location-card .featured-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: 0.7s ease all;
+}
+
+.location-card .card-face-1 {
+  position: relative;
+}
+
+.location-card .card-face-1 h4 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: 0.6s ease all;
+  z-index: 2;
+}
+
+.location-card img.arrow-tilt {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: 0.3s ease all;
+  z-index: 2;
+}
+
+.location-card .card-face-2 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: 0.5s ease all;
+}
+
+.location-card .card-face-2 h4 {
+  font-size: 18px;
+}
+
+.location-card .portable-text {
+  color: #fff;
+  font-weight: 300;
+}
+
+.location-card:hover .card-face-2 {
+  opacity: 1;
+  background: rgba(46, 46, 46, 0.9);
+}
+
+.location-card:hover .card-face-2 img.arrow-tilt {
+  opacity: 1;
+}
+
+.location-card:hover .card-face-1 h4,
+.location-card:hover .card-face-1 img.arrow-tilt {
+  opacity: 0;
+}
+
+.location-card:hover .featured-img {
+  transform: scale(1.1);
+}
+
+.smartcard-section {
+  background: #f6f6f6;
+}
+
+/* HOME PROJECTS */

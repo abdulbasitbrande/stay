@@ -4,18 +4,15 @@ import { useRouter } from "next/router";
 
 import Script from "next/script";
 
-import "../../public/assets/fonts/aileron/stylesheet.css"
-import "../../public/assets/fonts/inter/stylesheet.css"
+import "../../public/assets/fonts/aileron/stylesheet.css";
+import "../../public/assets/fonts/inter/stylesheet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
-import "animate.css/animate.min.css";
 
 import "@/styles/globals.css";
 import "@/styles/main.css";
 import "@/styles/u-main.css";
 import "@/styles/responsive.css";
-
-import WOWInit from "@/components/WOWInit";
 
 import { initJQueryGlobal } from "@/lib/jquery";
 import { initJQueryScripts } from "@/lib/jqueryInit";
@@ -47,8 +44,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <WOWInit />
-
       <Component {...pageProps} />
 
       <Script

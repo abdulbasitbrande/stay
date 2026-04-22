@@ -26,7 +26,7 @@ export const Insights = (props) => {
                   <h4 className='text-uppercase blog-title'>2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market</h4>
                   <span className='arrow-btn'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" strokeLinecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
                 </div>
@@ -42,7 +42,7 @@ export const Insights = (props) => {
                   <h4 className='text-uppercase blog-title'>2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market</h4>
                   <span className='arrow-btn'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M1.00032 10.0085H21.0192M21.0192 10.0085L12.0107 1.00003M21.0192 10.0085L12.0107 19.017" stroke="#2E2E2E" stroke-width="2" strokeLinecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
                 </div>
