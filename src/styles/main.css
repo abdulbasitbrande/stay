@@ -1,5 +1,9 @@
 /* HERO */
 
+.text-justify {
+  text-align: justify;
+}
+
 /* .hero-image-box { */
 /* clip-path: polygon(0% 0%, 100% 0%, 100% 89%, 46.5% 89%, 41% 100%, 0% 100%);
   border-radius: 30px; */
@@ -209,6 +213,10 @@ input::placeholder {
   stroke: #000;
 }
 
+/* HOME PROJECTS */
+
+/* SMART CARDS */
+
 .smartcard-section .ico-box-wrapper .icon-box {
   justify-content: center;
   align-items: center;
@@ -246,6 +254,14 @@ input::placeholder {
 .smartcard-section .ico-box-wrapper .feature-desc {
   padding-right: 40px;
 }
+
+.smartcard-section {
+  background: #f6f6f6;
+}
+
+/* SMART CARDS */
+
+/* LOCATION CARDS */
 
 .location-grid {
   column-count: 4;
@@ -331,8 +347,196 @@ input::placeholder {
   transform: scale(1.1);
 }
 
-.smartcard-section {
+/* LOCATION CARDS */
+
+/* STAY BG */
+
+.stay-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+svg#shape-circle {
+  position: absolute;
+  left: -200px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+}
+
+svg#shape-s {
+  position: absolute;
+  left: -20px;
+  top: 44%;
+  transform: translateY(-50%);
+  height: auto;
+  opacity: 0.5;
+}
+
+svg#shape-tay {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  opacity: 0.5;
+}
+
+/* STAY BG */
+
+/* CONTENT SECTION */
+
+.content-section {
   background: #f6f6f6;
 }
 
-/* HOME PROJECTS */
+a.plain-btn {
+  font-family: "Inter";
+  text-transform: uppercase;
+  color: #2e2e2e;
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+a.plain-btn span {
+  margin-left: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+a.plain-btn:hover {
+  color: #000;
+}
+
+a.plain-btn:hover span {
+  transform: translateX(6px);
+}
+
+/* CONTENT SECTION */
+
+/* OFFPLAN SECTION */
+
+.offplan-projects {
+  position: relative;
+}
+
+.offplan-projects .swiper-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.offplan-projects .swiper-nav-left {
+  left: -110px;
+}
+
+.offplan-projects .swiper-nav-right {
+  right: -110px;
+}
+
+.offplan-projects .swiper-nav:hover svg path {
+  stroke: #000;
+}
+
+.offplan-projects span.badge {
+  color: #9f9f9f;
+  background: #fff;
+  border: 1px solid #9f9f9f;
+  border-radius: 4px;
+  padding: 8px;
+  font-weight: 400;
+}
+
+.offplan-projects .tags {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.swiper:has(.swiper-pagination) {
+  padding-bottom: 40px;
+}
+
+.swiper:has(.swiper-pagination) .swiper-pagination-bullet {
+  border-radius: 0;
+  height: 3px;
+  width: 11px;
+  border-radius: 30px;
+}
+
+.swiper:has(.swiper-pagination) .swiper-pagination-bullet-active {
+  background: #2e2e2e;
+}
+
+/* OFFPLAN SECTION */
+
+/* FEATURE CIRCLE */
+
+/* Circle styling */
+
+.feature-row {
+  display: flex;
+  gap: 25px;
+}
+
+.feature-row .feature-circle:before {
+  content: "";
+  border: 1px solid #ddd;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 100%;
+  transform: scale(1.12);
+}
+
+.feature-row .feature-circle {
+  position: relative;
+}
+
+.feature-circle {
+  width: 371px;
+  height: 370px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.feature-circle p {
+  padding: 1.5rem;
+}
+
+.brands-logo-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.brands-logo-wrapper .brand-card-wrapper {
+  border: 1px solid #e7e7e7;
+  width: 270px;
+  height: 120px;
+  text-align: center;
+  padding: 30px 35px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FEATURE CIRCLE */

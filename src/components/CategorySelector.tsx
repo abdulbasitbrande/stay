@@ -1,4 +1,4 @@
-import { CategorySelectorProps } from "@/types/categorySelector";
+import { CategorySelectorProps } from "@/types/categoryselector";
 import { useState } from "react";
 
 const CategorySelector = ({

@@ -1,11 +1,14 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { ReactNode, useRef } from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+/* ---------------- TYPES ---------------- */
 
 type CarouselProps<T> = {
   items: T[];
@@ -17,7 +20,10 @@ type CarouselProps<T> = {
   };
   spaceBetween?: number;
   loop?: boolean;
+  pagination?: boolean;
 };
+
+/* ---------------- COMPONENT ---------------- */
 
 export default function Carousel<T>({
   items,
@@ -29,6 +35,7 @@ export default function Carousel<T>({
   },
   spaceBetween = 40,
   loop = true,
+  pagination = false,
 }: CarouselProps<T>) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -45,7 +52,7 @@ export default function Carousel<T>({
       </button>
 
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         spaceBetween={spaceBetween}
         loop={loop}
         slidesPerView={slidesPerView.mobile}
@@ -57,8 +64,9 @@ export default function Carousel<T>({
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
+        pagination={pagination ? { clickable: true } : false}
         onBeforeInit={(swiper) => {
-          // ✅ SAFE & SSR friendly
+          // Fix for SSR / Next.js
           if (typeof swiper.params.navigation !== "boolean") {
             swiper.params.navigation = {
               ...(swiper.params.navigation || {}),

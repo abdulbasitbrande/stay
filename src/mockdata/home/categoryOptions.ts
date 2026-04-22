@@ -1,4 +1,4 @@
-import type { CategoryOption } from "@/types/categorySelector";
+import type { CategoryOption } from "@/types/categoryselector";
 
 export const categoryOptions: CategoryOption[] = [
   { value: "buy", label: "Buy" },
