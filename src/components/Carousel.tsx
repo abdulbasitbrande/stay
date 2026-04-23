@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useState, useRef } from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -10,14 +10,42 @@ import "swiper/css/pagination";
 
 /* ---------------- TYPES ---------------- */
 
-type CarouselProps<T> = {
+type Device = "mobile" | "tablet" | "desktop";
+
+type ResponsiveValue = {
+  mobile?: number;
+  tablet?: number;
+  desktop?: number;
+};
+
+type EnabledValue = {
+  mobile?: boolean;
+  tablet?: boolean;
+  desktop?: boolean;
+};
+
+type GridValue = {
+  mobile?: number;
+  tablet?: number;
+  desktop?: number;
+};
+
+type LimitValue = {
+  mobile?: number;
+  tablet?: number;
+  desktop?: number;
+};
+
+type Props<T> = {
   items: T[];
   renderItem: (item: T) => ReactNode;
-  slidesPerView?: {
-    mobile?: number;
-    tablet?: number;
-    desktop?: number;
-  };
+
+  slidesPerView?: ResponsiveValue;
+  gridCols?: GridValue;
+  limitItems?: LimitValue;
+
+  enabled?: EnabledValue;
+
   spaceBetween?: number;
   loop?: boolean;
   pagination?: boolean;
@@ -28,21 +56,90 @@ type CarouselProps<T> = {
 export default function Carousel<T>({
   items,
   renderItem,
-  slidesPerView = {
-    mobile: 1,
-    tablet: 2,
-    desktop: 3,
-  },
+  slidesPerView,
+  gridCols,
+  limitItems,
+  enabled,
   spaceBetween = 40,
   loop = true,
   pagination = false,
-}: CarouselProps<T>) {
+}: Props<T>) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
-  return (
+  /* ---------------- REAL DEVICE (MATCHMEDIA) ---------------- */
+
+  const [device, setDevice] = useState<Device>("mobile");
+
+  useEffect(() => {
+    const getDevice = () => {
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        return "desktop";
+      }
+      if (window.matchMedia("(min-width: 576px)").matches) {
+        return "tablet";
+      }
+      return "mobile";
+    };
+
+    const update = () => setDevice(getDevice());
+
+    update();
+
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  /* ---------------- DEFAULTS ---------------- */
+
+  const spv = {
+    mobile: slidesPerView?.mobile ?? 1,
+    tablet: slidesPerView?.tablet ?? 2,
+    desktop: slidesPerView?.desktop ?? 3,
+  };
+
+  const cols = {
+    mobile: gridCols?.mobile ?? 1,
+    tablet: gridCols?.tablet ?? 2,
+    desktop: gridCols?.desktop ?? 3,
+  };
+
+  const isEnabled = {
+    mobile: enabled?.mobile ?? true,
+    tablet: enabled?.tablet ?? true,
+    desktop: enabled?.desktop ?? true,
+  };
+
+  /* ---------------- LIMIT FIX ---------------- */
+
+  const limitCount = limitItems?.[device];
+
+  const visibleItems =
+    limitCount !== undefined ? items.slice(0, limitCount) : items;
+
+  /* ---------------- SWITCH ---------------- */
+
+  const isSwiper = isEnabled[device];
+
+  /* ---------------- GRID ---------------- */
+
+  const GridView = () => (
+    <div className="row g-4">
+      {visibleItems.map((item, i) => (
+        <div
+          key={i}
+          className={`col-12 col-md-${Math.floor(12 / cols[device])}`}
+        >
+          {renderItem(item)}
+        </div>
+      ))}
+    </div>
+  );
+
+  /* ---------------- SWIPER ---------------- */
+
+  const SwiperView = () => (
     <div className="position-relative">
-      {/* NAVIGATION */}
       <button ref={prevRef} className="swiper-nav swiper-nav-left">
         <ArrowLeft />
       </button>
@@ -55,10 +152,10 @@ export default function Carousel<T>({
         modules={[Navigation, Pagination]}
         spaceBetween={spaceBetween}
         loop={loop}
-        slidesPerView={slidesPerView.mobile}
+        slidesPerView={spv.mobile}
         breakpoints={{
-          576: { slidesPerView: slidesPerView.tablet },
-          992: { slidesPerView: slidesPerView.desktop },
+          576: { slidesPerView: spv.tablet },
+          992: { slidesPerView: spv.desktop },
         }}
         navigation={{
           prevEl: prevRef.current,
@@ -66,7 +163,6 @@ export default function Carousel<T>({
         }}
         pagination={pagination ? { clickable: true } : false}
         onBeforeInit={(swiper) => {
-          // Fix for SSR / Next.js
           if (typeof swiper.params.navigation !== "boolean") {
             swiper.params.navigation = {
               ...(swiper.params.navigation || {}),
@@ -76,15 +172,15 @@ export default function Carousel<T>({
           }
         }}
       >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>{renderItem(item)}</SwiperSlide>
+        {visibleItems.map((item, i) => (
+          <SwiperSlide key={i}>{renderItem(item)}</SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
-}
 
-/* ---------------- ICONS ---------------- */
+  return isSwiper ? <SwiperView /> : <GridView />;
+}
 
 function ArrowLeft() {
   return (

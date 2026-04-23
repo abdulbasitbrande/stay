@@ -426,28 +426,6 @@ a.plain-btn:hover span {
   position: relative;
 }
 
-.offplan-projects .swiper-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.offplan-projects .swiper-nav-left {
-  left: -110px;
-}
-
-.offplan-projects .swiper-nav-right {
-  right: -110px;
-}
-
-.offplan-projects .swiper-nav:hover svg path {
-  stroke: #000;
-}
-
 .offplan-projects span.badge {
   color: #9f9f9f;
   background: #fff;
@@ -466,20 +444,6 @@ a.plain-btn:hover span {
   margin: 0 auto;
 }
 
-.swiper:has(.swiper-pagination) {
-  padding-bottom: 40px;
-}
-
-.swiper:has(.swiper-pagination) .swiper-pagination-bullet {
-  border-radius: 0;
-  height: 3px;
-  width: 11px;
-  border-radius: 30px;
-}
-
-.swiper:has(.swiper-pagination) .swiper-pagination-bullet-active {
-  background: #2e2e2e;
-}
 
 /* OFFPLAN SECTION */
 
@@ -540,3 +504,167 @@ a.plain-btn:hover span {
 }
 
 /* FEATURE CIRCLE */
+
+/* BLOG SECTION */
+
+.blogs-section {
+  background: #f6f6f6;
+}
+
+/* BLOG SECTION */
+
+/* FAQ SECTION */
+
+.faq-section {
+  background: #f5f5f5;
+}
+
+.custom-accordion {
+  counter-reset: accordion-counter;
+  border: 1px solid #757575;
+  border-left: 0;
+  position: relative;
+  border-bottom-right-radius: 20px;
+}
+
+.custom-accordion .accordion-item {
+  counter-increment: accordion-counter;
+  border: 0;
+}
+
+.custom-accordion .accordion-button:after {
+  content: counter(accordion-counter, decimal-leading-zero);
+  background: none;
+  width: auto;
+  height: auto;
+  margin-top: 80px;
+  margin-left: auto;
+  font-family: Aileron;
+  font-size: 64px;
+  font-weight: bold;
+  transform: none;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  z-index: 9;
+  zoom: 0.9;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  color: currentColor;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.custom-accordion .accordion-button {
+  position: relative;
+  height: 80px;
+  display: block;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: unset;
+}
+.accordion-body {
+  /* padding-top: 80px; */
+  position: relative;
+  width: 60%;
+  padding-top: 0;
+  padding-bottom: 12px;
+}
+
+.accordion-body a {
+  font-weight: 600;
+}
+
+.accordion-button {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Inter";
+  text-transform: uppercase;
+}
+
+.accordion-item:not(:first-child) .accordion-button::before {
+  content: "";
+  background: url(/assets/images/faq-border.svg) 0 0 / 100% no-repeat;
+  width: 94%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 0;
+  z-index: 1;
+}
+
+.custom-accordion:after {
+  content: "";
+  background: url(/assets/images/faq3.svg) 0 0 / contain no-repeat;
+  position: absolute;
+  z-index: 99;
+  width: 230px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  text-align: right;
+  margin-right: auto;
+  top: -27px;
+  right: -2px;
+}
+
+.accordion-item:last-child {
+  min-height: 162px;
+  border-bottom-right-radius: 20px;
+}
+
+img#faq-bg {
+  position: absolute;
+  right: 0;
+  width: 40%;
+  bottom: -100px;
+}
+
+/* FAQ SECTION */
+
+/* DEFAULT SLIDER NAVIGAITON AND PAGINATION */
+
+.default-navi .swiper-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.default-navi .swiper-nav-left {
+  left: -110px;
+}
+
+.default-navi .swiper-nav-right {
+  right: -110px;
+}
+
+.default-navi .swiper-nav:hover svg path {
+  stroke: #000;
+}
+
+.default-navi .swiper:has(.swiper-pagination) {
+  padding-bottom: 40px;
+}
+
+.default-navi .swiper:has(.swiper-pagination) .swiper-pagination-bullet {
+  border-radius: 0;
+  height: 3px;
+  width: 11px;
+  border-radius: 30px;
+}
+
+.default-navi .swiper:has(.swiper-pagination) .swiper-pagination-bullet-active {
+  background: #2e2e2e;
+}
+
+/* DEFAULT SLIDER NAVIGAITON AND PAGINATION */

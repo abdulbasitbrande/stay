@@ -7,6 +7,8 @@ import { locationCard } from "@/mockdata/home/locationCard";
 import { offplanProperties } from "@/mockdata/home/offplanProperties";
 import { Features } from "@/mockdata/home/features";
 import { brands } from "@/mockdata/brands";
+import { blogs } from "@/mockdata/insights/blogcard";
+import { solutionItems } from "@/mockdata/home/solutionItems";
 
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
@@ -21,6 +23,8 @@ import OffplanProperties from "@/components/sections/home/OffplanProperties";
 import Stay from "@/components/Stay";
 import FeatureCircles from "@/components/sections/home/FeatureCircles";
 import BrandsCard from "@/components/Brands";
+import BlogCard from "@/components/sections/BlogCard";
+import Solution from "@/components/Solution";
 
 export default function Home() {
   return (
@@ -28,7 +32,7 @@ export default function Home() {
       <HeroSection />
 
       <section className="project-section sec-padding">
-        <div className="sec-wrapper project-section-wrapper">
+        <div className="sec-wrapper project-section-wrapper default-navi">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-7">
@@ -137,7 +141,7 @@ export default function Home() {
       </section>
 
       <section className="offplan-projects sec-padding">
-        <div className="sec-wrapper offplan-projects-section-wrapper">
+        <div className="sec-wrapper offplan-projects-section-wrapper default-navi">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-7">
@@ -165,6 +169,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="faq-section sec-padding position-relative overflow-hidden">
+        <div className="sec-wrapper faq-section-wrapper">
+          <img src="/assets/images/faq-bg.svg" alt="" id="faq-bg" />
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-7">
+                <SectionHeading text="Bespoke real estate solutions crafted for performance and growth." />
+              </div>
+            </div>
+
+            <div className="pt-5">
+              <Solution
+                SolutionItem={solutionItems.SolutionItem}
+                image={solutionItems.image}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="featurecircle-section sec-padding">
         <div className="sec-wrapper featurecircle-section-wrapper">
           <div className="container">
@@ -179,6 +203,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="brands-section sec-padding">
         <div className="sec-wrapper brands-section-wrapper">
           <div className="container">
@@ -193,6 +218,38 @@ export default function Home() {
                   <BrandsCard key={item.id} {...item} />
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="blogs-section sec-padding">
+        <div className="sec-wrapper blogs-section-wrapper default-navi">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-7">
+                <SectionHeading text="Smarter entry points into Dubai’s newest developments." />
+              </div>
+
+              <div className="col-lg-5 text-end">
+                <Link href="/" className="plain-btn mt-5">
+                  See more
+                  <span>
+                    <img src="assets/images/arrow-tilt.svg" alt="" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="row pt-5">
+              <Carousel
+                items={blogs}
+                renderItem={(item) => <BlogCard {...item} />}
+                pagination={true}
+                enabled={{ desktop: false }}
+                gridCols={{ desktop: 3 }}
+                limitItems={{ desktop: 3, mobile: 4 }}
+              />
             </div>
           </div>
         </div>
