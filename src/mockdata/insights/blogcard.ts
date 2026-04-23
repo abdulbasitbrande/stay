@@ -1,0 +1,88 @@
+import { blogcard } from "@/types/blogcard";
+
+export const blogs: blogcard[] = [
+    {
+        id: 1,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-1.jpg",
+        slug: "blog-1",
+    },
+    {
+        id: 2,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-2.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 3,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-3.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 4,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-4.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 5,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-5.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 6,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-6.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 7,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-1.jpg",
+        slug: "blog-1",
+    },
+    {
+        id: 8,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-2.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 9,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-3.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 10,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-4.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 11,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-5.jpg",
+        slug: "blog-2",
+    },
+    {
+        id: 12,
+        title: "2025, Landmark Year: STAY DXB Achieves New Heights in Dubai’s Market",
+        date: "DECEMBER 26, 2024",
+        image: "/assets/images/blog-img-6.jpg",
+        slug: "blog-2",
+    },
+]

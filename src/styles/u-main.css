@@ -5,7 +5,8 @@
 
 .insights-sec {
     .custom-space {
-        margin-left: -30px;
+        margin-left: -32px;
+        margin-bottom: -30px;
 
         .mainbox {
             margin-left: 32px;
@@ -13,6 +14,8 @@
     }
 
     .mainbox {
+        margin-bottom: 30px;
+
         .imgbox {
             aspect-ratio: 1/0.75;
             overflow: hidden;
