@@ -4,4 +4,5 @@ export interface blogcard {
     date: string;
     image: string;
     slug: string;
+    hasCategory?: boolean;
 }

@@ -28,8 +28,13 @@
         }
 
         .contentbox {
-            .blog-date {
+            .meta-wrapper {
                 margin-bottom: 10px;
+            }
+
+            .blog-cat {
+                color: #2858AB;
+                font-weight: 600;
             }
 
             .blog-title {
@@ -50,4 +55,92 @@
             }
         }
     }
+}
+
+
+/* Insight Details section */
+.insight-detail-sec {
+    .main-img {
+        -webkit-mask-image: url('/assets/images/insight-detail-img-shape.svg');
+        mask-image: url('/assets/images/insight-detail-img-shape.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 25px 0;
+
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--theme-primary-color);
+            font-weight: 500;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 10px;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 26px;
+                height: 26px;
+                background-color: var(--theme-text-color);
+                border-radius: 5px;
+                transition: 0.4s all;
+
+                &:hover {
+                    background-color: var(--theme-primary-color);
+                }
+            }
+        }
+    }
+
+    .contentbox {
+        max-width: 62%;
+        margin-top: -60px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+        }
+
+        .content {
+            text-align: justify;
+        }
+    }
+}
+
+
+
+/* Form CTA Section */
+.form-cta-sec {
+    .contentbox {
+        &.\--medium {
+            max-width: calc(100% - 30px);
+        }
+    }
+}
+
+
+/* Form CTa With Image Section */
+.form-cta-with-img-sec {
+    margin-bottom: -90px;
+    position: relative;
+    z-index: 1;
 }
