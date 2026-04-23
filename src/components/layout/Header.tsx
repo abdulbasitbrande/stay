@@ -20,7 +20,7 @@ export default function Header() {
               <nav className="header-menu">
                 <ul className="menu-wrapper">
                   <li>
-                    <Link href="/">Buy</Link>
+                    <Link href="/insights">Buy</Link>
                   </li>
                   <li>
                     <Link href="/">Rent</Link>
