@@ -13,7 +13,7 @@ export default function PropertyList({ data }: Props) {
           key={item.id}
           property={{
             ...item,
-            variant: "small",
+            variant: "large",
           }}
         />
       ))}

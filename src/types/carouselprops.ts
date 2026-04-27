@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 type CarouselProps<T> = {
   items: T[];
   renderItem: (item: T) => ReactNode;

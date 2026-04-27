@@ -6,9 +6,21 @@ export const filterProperties = (data: Property[], filters: Filters) => {
     // SEARCH
     if (
       filters.search.length &&
-      !filters.search.some((s) =>
-        (item.title || "").toLowerCase().includes(s.toLowerCase()),
-      )
+      !filters.search.some((raw) => {
+        const s = raw.toLowerCase();
+        const title = (item.title || "").toLowerCase();
+        const location = (item.location || "").toLowerCase();
+
+        if (s.startsWith("building:")) {
+          return title.includes(s.replace("building:", ""));
+        }
+
+        if (s.startsWith("location:")) {
+          return location.includes(s.replace("location:", ""));
+        }
+
+        return title.includes(s) || location.includes(s);
+      })
     ) {
       return false;
     }

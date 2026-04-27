@@ -1,6 +1,7 @@
 export interface Filters {
   search: string[];
   type: string | null;
+  sort: string | null;
 
   price: {
     min: number | null;
