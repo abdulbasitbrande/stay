@@ -422,13 +422,20 @@ h6 {
 
 header {
   padding: 25px 0;
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 111;
   background-color: var(--theme-white);
   transition: 0.4s all;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 4px 35px 0 rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(15px);
+
+  &.fixed-header {
+    position: absolute;
+  }
+
 
   &.no-banner {
     position: relative;
@@ -858,6 +865,10 @@ header {
       &:hover {
         border-color: var(--theme-font-primary);
       }
+
+      &::placeholder {
+        font-size: 12px;
+      }
     }
 
 
@@ -882,6 +893,12 @@ header {
 
   .submit-btn {
     margin-top: 20px;
+  }
+
+  &.attach-with-footer {
+    form {
+      padding-bottom: 80px;
+    }
   }
 }
 
@@ -940,6 +957,8 @@ header {
     }
 
     .footer-menu {
+      margin-bottom: 0;
+
       li {
         margin-bottom: 12px;
 

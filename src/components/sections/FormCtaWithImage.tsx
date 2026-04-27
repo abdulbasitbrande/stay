@@ -10,7 +10,12 @@ type OptionType = {
     label: string;
 };
 
-export const FormCtaWithImage = () => {
+type FormDataProp = {
+    formTitle: string,
+    formImage: string,
+}
+
+export const FormCtaWithImage = ({ formTitle, formImage }: FormDataProp) => {
 
     const [serviceList, setserviceList] = useState<OptionType | null>({
         value: "real-estate",
@@ -24,11 +29,11 @@ export const FormCtaWithImage = () => {
     return (
         <section className='form-cta-with-img-sec forJqueryOnly  sec-bg-secondary'>
             <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-6">
-                        <div className="form-wrapper has-right-space sec-padding --medium">
+                <div className="row ">
+                    <div className="col-lg-6 align-self-lg-center">
+                        <div className="form-wrapper has-right-space sec-padding  attach-with-footer">
                             <div className="sec-title has-spacing">
-                                <SectionHeading text="Start Your Real Estate Journey With Us!" />
+                                <SectionHeading text={formTitle} />
                             </div>
                             <form>
                                 <div className="row g-0">
@@ -82,7 +87,7 @@ export const FormCtaWithImage = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="imgbox">
-                            <img className="fit-img" src="/assets/images/form-cta-img.jpg" alt="" />
+                            <img className="fit-img" src={formImage} alt="" />
                         </div>
                     </div>
 

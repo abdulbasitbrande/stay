@@ -4,11 +4,16 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-export default function Header() {
+
+interface HeaderProps {
+  className?: string;
+}
+
+export default function Header({ className }: HeaderProps) {
   return (
     // Header Start
     <>
-      <header className="header">
+      <header className={`header ${className ?? ""}`}>
         <div className="container">
           <div className="header-wrapper">
             <div className="leftbox">

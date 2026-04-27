@@ -7,7 +7,7 @@ export const FormCta = () => {
                 <div className="row">
                     <div className="col-lg-7">
                         <div className="contentbox --medium">
-                            <div className="sec-title">
+                            <div className="sec-title is-tb-space">
                                 <SectionHeading  text="Subscribe for the latest insights, property opportunities, and market updates." />
                             </div>
                         </div>
