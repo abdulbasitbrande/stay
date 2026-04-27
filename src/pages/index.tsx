@@ -25,6 +25,7 @@ import FeatureCircles from "@/components/sections/home/FeatureCircles";
 import BrandsCard from "@/components/Brands";
 import BlogCard from "@/components/sections/BlogCard";
 import Solution from "@/components/Solution";
+import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 
 export default function Home() {
   return (
@@ -204,6 +205,11 @@ export default function Home() {
         </div>
       </section>
 
+      <FormCtaWithImage
+        formImage="assets/images/homecta.jpg"
+        formTitle="Start Your Real Estate Journey With Us!"
+      />
+
       <section className="brands-section sec-padding">
         <div className="sec-wrapper brands-section-wrapper">
           <div className="container">
@@ -249,7 +255,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
     </Layout>
   );
 }
