@@ -1,15 +1,18 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export const FormCta = () => {
     return (
         <section className='form-cta-sec sec-padding sec-bg-secondary'>
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6">
-                        <div className="contentbox">
-                            <div className="sec-title">
+                    <div className="col-lg-7">
+                        <div className="contentbox --medium">
+                            <div className="sec-title is-tb-space">
+                                <SectionHeading  text="Subscribe for the latest insights, property opportunities, and market updates." />
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-5">
                         <div className="form-wrapper">
                             <form>
                                 <div className="row g-0">

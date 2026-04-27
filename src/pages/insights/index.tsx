@@ -1,7 +1,9 @@
+
 import CategorySelector from '@/components/CategorySelector';
 import Layout from '@/components/layout/Layout';
 import BlogCard from '@/components/sections/BlogCard';
 import FormCta from '@/components/sections/FormCta';
+import SectionHeading from "@/components/SectionHeading";
 import SortFilter from '@/components/SortFilter';
 import { blogs } from '@/mockdata/insights/blogcard';
 import { blogCategories } from '@/mockdata/insights/blogcategories';
@@ -9,12 +11,12 @@ import Link from 'next/link';
 
 export const Insights = () => {
   return (
-    <Layout>
+    <Layout mainClass='insightspage'>
       {/* Insights Section Start */}
       <section className="insights-sec blog-cards-sec sec-padding --small">
         <div className="container">
           <div className="sec-title --is-medium has-spacing has-scroll-animation">
-            <h2 className=''>Expert Perspectives on Dubai’s Property Market & Investment Opportunities</h2>
+            <SectionHeading text="Expert Perspectives on Dubai’s Property Market & Investment Opportunities" />
           </div>
           <div className="tab-links-wrapper d-flex justify-content-between">
             <div className="tab-links">
@@ -45,7 +47,7 @@ export const Insights = () => {
       {/* Insights Section Start */}
 
       {/* Form CTA Section Start */}
-      <FormCta  />
+      <FormCta />
       {/* Form CTA Section End */}
     </Layout>
   );

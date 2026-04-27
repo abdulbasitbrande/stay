@@ -120,8 +120,9 @@ h6 {
 /* Section Title */
 .sec-title {
   &.\--is-medium {
-    max-width: 60%;
+    max-width: 64%;
   }
+
 
   &.has-spacing {
     margin-bottom: 40px;
@@ -421,13 +422,20 @@ h6 {
 
 header {
   padding: 25px 0;
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 111;
   background-color: var(--theme-white);
   transition: 0.4s all;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 4px 35px 0 rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(15px);
+
+  &.fixed-header {
+    position: absolute;
+  }
+
 
   &.no-banner {
     position: relative;
@@ -797,11 +805,11 @@ header {
 .sec-padding {
   padding: 80px 0;
 
-  &.\--xsmall {
+  &.\--small {
     padding: 40px 0;
   }
 
-  &.\--small {
+  &.\--medium {
     padding: 60px 0;
   }
 
@@ -822,20 +830,26 @@ header {
 
 /* Form CTA */
 .form-wrapper {
+
+  &.has-right-space {
+    max-width: calc(100% - 40px);
+  }
+
   .row {
-    margin-left: -8px;
+    margin-left: -10px;
   }
 
   .input-wrapper {
     font-size: 12px;
     margin-bottom: 30px;
-    margin-left: 8px;
+    margin-left: 10px;
 
     label {
       display: block;
       text-transform: uppercase;
       margin-bottom: 12px;
       font-weight: 600;
+      color: var(--theme-primary-color);
     }
 
     input {
@@ -851,11 +865,40 @@ header {
       &:hover {
         border-color: var(--theme-font-primary);
       }
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+
+    .custom-select__dropdown-indicator {
+      color: var(--theme-primary-color) !important;
+    }
+
+    .custom-select__single-value {
+      color: var(--theme-text-color);
+    }
+
+    .custom-select__control {
+      border: 0.5px solid #B7B7B7 !important;
+      border-radius: 6px;
+      padding: 0 10px 0 12px;
+
+      &:hover {
+        border-color: var(--theme-font-primary) !important;
+      }
     }
   }
 
   .submit-btn {
     margin-top: 20px;
+  }
+
+  &.attach-with-footer {
+    form {
+      padding-bottom: 80px;
+    }
   }
 }
 
@@ -873,6 +916,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   .footer-bg-shape {
@@ -884,6 +928,7 @@ header {
 
   .container {
     position: relative;
+    z-index: 2;
   }
 
   .footer-logo-wrapper {
@@ -912,6 +957,8 @@ header {
     }
 
     .footer-menu {
+      margin-bottom: 0;
+
       li {
         margin-bottom: 12px;
 
@@ -990,7 +1037,7 @@ header {
   }
 
   h2 {
-    font-size: clamp(24px, 24px + 1.5vw, 48px);
+    font-size: clamp(24px, 24px + 1.5vw, 46px);
   }
 
   h3 {

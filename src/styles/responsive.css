@@ -1,3 +1,4 @@
+/* For Bootstrap Container Reszie  */
 @media(max-width:1200px) {
   @media (min-width: 576px) {
     .container {
@@ -19,9 +20,13 @@
 }
 
 
-
+/* Reponsive Start */
 
 @media(max-width:1440px) {
+  .sec-title.--is-medium {
+    max-width: 75%;
+  }
+
   header .header-menu>.menu-wrapper>li {
     font-size: 12px;
   }
@@ -35,8 +40,31 @@
   }
 }
 
+@media(max-width:1200px) {
+  .insight-detail-sec .contentbox {
+    max-width: 70%;
+    margin-top: -40px;
+  }
+}
 
 @media (max-width: 991px) {
+
+  .sec-title.--is-medium {
+    max-width: 100%;
+  }
+
+  .sec-title.is-tb-space {
+    margin-bottom: 40px;
+  }
+
+  .form-wrapper.has-right-space {
+    max-width: 100%;
+  }
+
+  header .header-menu {
+    display: none;
+  }
+
   .hero-image-box {
     clip-path: none;
     height: 400px;
@@ -54,5 +82,57 @@
     border-end: none !important;
     border-bottom: 1px solid #dee2e6;
     padding: 10px 0;
+  }
+
+  .form-wrapper.attach-with-footer form {
+    padding-bottom: 0;
+  }
+
+  .inner-banner-sec .contentbox.is-medium {
+    max-width: 100%;
+  }
+
+  .inner-banner-sec .contentbox {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  .careers-list-sec .mainbox {
+    background: white;
+    border-radius: 20px;
+
+    .contentbox {
+      padding: 25px 25px 0;
+    }
+
+    .btn-wrapper {
+      transform: unset;
+      padding: 25px 25px 30px;
+    }
+
+    .career-tags-list {
+      max-width: 100%;
+
+      span {
+        padding: 8px 16px;
+      }
+    }
+  }
+
+
+  .footer-sec {
+    padding-top: 50px;
+
+    .footer-wrapper {
+      padding: 50px 0;
+    }
+  }
+
+}
+
+@media(max-width:767px) {
+  .insight-detail-sec .contentbox {
+    max-width: 100%;
+    margin-top: 30px;
   }
 }

@@ -1,14 +1,17 @@
 import Link from 'next/link';
 import { blogcard } from '@/types/blogcard';
 
-const BlogCard = ({ title, date, image, slug }: blogcard) => {
+const BlogCard = ({ title, date, image, slug, hasCategory }: blogcard) => {
     return (
-        <Link className='mainbox d-block' href={slug}>
+        <Link className='mainbox d-block' href={`/insights/${slug}`}>
             <div className="imgbox">
                 <img className='fit-img' src={image} alt="" />
             </div>
             <div className="contentbox">
-                <span className='blog-date d-block'>{date}</span>
+                <div className="meta-wrapper">
+                    <span className='blog-date '>{date}</span>
+                    {hasCategory && <> - <span className='blog-cat text-uppercase'>Blogs</span></>}
+                </div>
                 <h4 className='text-uppercase blog-title'>{title}</h4>
                 <span className='arrow-btn'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
