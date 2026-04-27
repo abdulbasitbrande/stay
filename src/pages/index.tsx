@@ -223,7 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="blogs-section sec-padding">
+      {/* <section className="blogs-section sec-padding">
         <div className="sec-wrapper blogs-section-wrapper default-navi">
           <div className="container">
             <div className="row align-items-center">
@@ -253,7 +253,36 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      {/* Related Section Start */}
+      <section className="related-sec insights-sec sec-padding">
+        <div className="container">
+          <div className="sec-title --is-medium has-spacing">
+            <SectionHeading text="Start Your Real Estate Journey With Us!" />
+          </div>
+          <div className="realted-insights-wrapper">
+            <Carousel
+              items={blogs}
+              renderItem={(blog) => (
+                <BlogCard
+                  id={blog.id}
+                  title={blog.title}
+                  date={blog.date}
+                  image={blog.image}
+                  slug={blog.slug}
+                  hasCategory={blog.hasCategory}
+                />
+              )}
+              pagination={true}
+              enabled={{ desktop: false }}
+              gridCols={{ desktop: 3 }}
+              limitItems={{ desktop: 3, mobile: 4 }}
+            />
+          </div>
+        </div>
       </section>
+      {/* Related Section End */}
     </Layout>
   );
 }
