@@ -444,7 +444,6 @@ a.plain-btn:hover span {
   margin: 0 auto;
 }
 
-
 /* OFFPLAN SECTION */
 
 /* FEATURE CIRCLE */
@@ -668,3 +667,42 @@ img#faq-bg {
 }
 
 /* DEFAULT SLIDER NAVIGAITON AND PAGINATION */
+
+/* BUY PAGE */
+
+.listing .position-relative img {
+  border-radius: 25px !important;
+  max-height: 480px;
+}
+
+.listing .project-section .card .card-body {
+  padding: 72px 50px;
+}
+
+.listing .project-section .card .card-body p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.action-btns-wrapper {
+  border: 1px solid #d4d4d4;
+  border-left: 0;
+  border-right: 0;
+  padding: 15px 0;
+  margin-bottom: 15px;
+}
+
+.card.small h3 {
+  display: none;
+}
+
+.card.small p.small {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* BUY PAGE */

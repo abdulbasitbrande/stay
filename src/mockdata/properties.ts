@@ -1,46 +1,11 @@
 // mock/properties.ts
 
-// import { Property } from "@/types/property";
-
-// export const properties: Property[] = [
-//   {
-//     id: 1,
-//     title: "Elegant Contemporary Villa with a Garden",
-//     description: "Lorem ipsum dolor sit amet consectetur.",
-//     image: "/assets/images/villa (1).jpg",
-//     tags: ["VILLA", "1 BEDROOM", "2 BATHROOM", "839 SQ.FT"],
-//   },
-//   {
-//     id: 2,
-//     title: "Prime Location Generous Space High Return",
-//     description: "Lorem ipsum dolor sit amet consectetur.",
-//     image: "/assets/images/villa (2).jpg",
-//     tags: ["VILLA", "1 BEDROOM", "2 BATHROOM", "839 SQ.FT"],
-//   },
-//   {
-//     id: 3,
-//     title: "Luxury Modern Villa",
-//     description:
-//       "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
-//     image: "/assets/images/villa (3).jpg",
-//     tags: ["VILLA", "1 BEDROOM", "2 BATHROOM", "839 SQ.FT"],
-//   },
-//   {
-//     id: 4,
-//     title: "Luxury Modern Villa",
-//     description:
-//       "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
-//     image: "/assets/images/villa (3).jpg",
-//     tags: ["VILLA", "1 BEDROOM", "2 BATHROOM", "839 SQ.FT"],
-//   },
-// ];
-
 import { Property } from "@/types/property";
 
 export const properties: Property[] = [
   {
     id: "1",
-    title: "Modern Villa",
+    title: "Prime Location | Generous Space | High Return on Investment",
     price: 2700000,
     type: "villa",
     beds: 4,
@@ -50,7 +15,7 @@ export const properties: Property[] = [
     amenities: ["pool", "garden"],
     slug: "modern-villa-jvt",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor unitiil incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
     image: "/assets/images/villa (3).jpg",
     tags: ["VILLA", "1 BEDROOM", "2 BATHROOM", "839 SQ.FT"],
   },

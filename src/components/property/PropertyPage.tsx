@@ -3,7 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { setProperties, updateFilter, applyFilters } from "@/store/propertySlice";
+import {
+  setProperties,
+  updateFilter,
+  applyFilters,
+} from "@/store/propertySlice";
 import { properties } from "@/mockdata/properties";
 import { filterProperties } from "@/utils/filter";
 import Filters from "./Filters";
@@ -48,7 +52,9 @@ export default function PropertyPage({ purpose }: any) {
       dispatch(updateFilter({ key: "sort", value: sort }));
     }
 
-    const searches = (searchAll?.length ? searchAll : searchSingle ? [searchSingle] : [])
+    const searches = (
+      searchAll?.length ? searchAll : searchSingle ? [searchSingle] : []
+    )
       .map((s: string) => s.trim())
       .filter(Boolean);
 
@@ -64,7 +70,7 @@ export default function PropertyPage({ purpose }: any) {
             min: priceMin ? Number(priceMin) : null,
             max: priceMax ? Number(priceMax) : null,
           },
-        })
+        }),
       );
     }
 
@@ -76,7 +82,7 @@ export default function PropertyPage({ purpose }: any) {
             min: bedsMin ? Number(bedsMin) : null,
             max: bedsMax ? Number(bedsMax) : null,
           },
-        })
+        }),
       );
     }
 
@@ -97,7 +103,7 @@ export default function PropertyPage({ purpose }: any) {
         updateFilter({
           key: "amenities",
           value: amenities.split(","),
-        })
+        }),
       );
     }
 
@@ -171,10 +177,8 @@ export default function PropertyPage({ purpose }: any) {
 
     if (!sort) return data;
 
-    const byNum =
-      (get: (p: any) => number) =>
-      (a: any, b: any) =>
-        get(a) - get(b);
+    const byNum = (get: (p: any) => number) => (a: any, b: any) =>
+      get(a) - get(b);
 
     switch (sort) {
       case "price_asc":
@@ -209,32 +213,36 @@ export default function PropertyPage({ purpose }: any) {
   }, [sorted, safePage]);
 
   return (
-    <>
+    <div className="propertyPage pb-5">
       <Filters />
 
       <PropertyList data={paged} />
 
-      <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <button
-            className="butn"
-            disabled={safePage <= 1}
-            onClick={() => setPage((p) => Math.max(1, p - 1))}
-          >
-            Prev
-          </button>
-          <span style={{ fontSize: 14 }}>
-            Page {safePage} of {totalPages}
-          </span>
-          <button
-            className="butn"
-            disabled={safePage >= totalPages}
-            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-          >
-            Next
-          </button>
+      <div className="cusPagination">
+        <div
+          style={{ display: "flex", justifyContent: "center", marginTop: 20 }}
+        >
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <button
+              className="butn"
+              disabled={safePage <= 1}
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+            >
+              Prev
+            </button>
+            <span style={{ fontSize: 14 }}>
+              Page {safePage} of {totalPages}
+            </span>
+            <button
+              className="butn"
+              disabled={safePage >= totalPages}
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
