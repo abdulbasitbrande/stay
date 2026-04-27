@@ -41,7 +41,7 @@ const PropertyCard = ({ property }: Props) => {
 
         {/* TAGS */}
         <div className="d-flex flex-wrap gap-2 mb-3">
-          {property.tags.map((tag, i) => (
+          {property.tags?.map((tag, i) => (
             <span key={i} className="badge">
               {tag}
             </span>
