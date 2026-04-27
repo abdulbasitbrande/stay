@@ -223,38 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="blogs-section sec-padding">
-        <div className="sec-wrapper blogs-section-wrapper default-navi">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-7">
-                <SectionHeading text="Smarter entry points into Dubai’s newest developments." />
-              </div>
-
-              <div className="col-lg-5 text-end">
-                <Link href="/" className="plain-btn mt-5">
-                  See more
-                  <span>
-                    <img src="assets/images/arrow-tilt.svg" alt="" />
-                  </span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="row pt-5">
-              <Carousel
-                items={blogs}
-                renderItem={(item) => <BlogCard {...item} />}
-                pagination={true}
-                enabled={{ desktop: false }}
-                gridCols={{ desktop: 3 }}
-                limitItems={{ desktop: 3, mobile: 4 }}
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Related Section Start */}
       <section className="related-sec insights-sec sec-padding">
         <div className="container">
