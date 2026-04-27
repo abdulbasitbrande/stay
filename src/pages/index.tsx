@@ -223,7 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Related Section Start */}
       <section className="related-sec insights-sec sec-padding">
         <div className="container">
           <div className="sec-title --is-medium has-spacing">
@@ -250,7 +249,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Related Section End */}
+      
     </Layout>
   );
 }
