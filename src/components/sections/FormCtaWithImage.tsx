@@ -11,11 +11,12 @@ type OptionType = {
 };
 
 type FormDataProp = {
-    formTitle: string,
-    formImage: string,
+    formTitle: string;
+    formImage: string;
+    sectionClass?: string;
 }
 
-export const FormCtaWithImage = ({ formTitle, formImage }: FormDataProp) => {
+export const FormCtaWithImage = ({ formTitle, formImage, sectionClass }: FormDataProp) => {
 
     const [serviceList, setserviceList] = useState<OptionType | null>({
         value: "real-estate",
@@ -27,7 +28,7 @@ export const FormCtaWithImage = ({ formTitle, formImage }: FormDataProp) => {
         { value: "property-management", label: "Property Management" },
     ];
     return (
-        <section className='form-cta-with-img-sec forJqueryOnly  sec-bg-secondary'>
+        <section className={`form-cta-with-img-sec forJqueryOnly  sec-bg-secondary ${sectionClass ?? ""}`}>
             <div className="container">
                 <div className="row ">
                     <div className="col-lg-6 align-self-lg-center">

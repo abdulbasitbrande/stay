@@ -274,3 +274,79 @@
         }
     }
 }
+
+
+/* Career Detail Section */
+.career-detail-sec {
+    .career-details-wrapper {
+        .career-detailbox {
+            padding: 45px;
+            background-color: var(--theme-secondary-color);
+            border-radius: 16px;
+            margin-bottom: 15px;
+
+            .cd-title {
+                margin-bottom: 20px;
+                /* font-family: var(--theme-font-primary); */
+            }
+
+            .content {
+                text-align: justify;
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                ul,
+                ol {
+                    padding-left: 15px;
+                    margin-bottom: 0;
+
+                    li {
+                        margin-bottom: 5px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .btn-wrapper {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .career-sidebar {
+        max-width: calc(100% - 100px);
+        margin-left: auto;
+        margin-top: 50px;
+        position: sticky;
+        top: 20px;
+
+        .career-sidebar-title {
+            border-bottom: 1px solid #D4D4D4;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            h5 {
+                margin-bottom: 5px;
+            }
+
+            li {
+                border-bottom: 1px solid #D4D4D4;
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+}

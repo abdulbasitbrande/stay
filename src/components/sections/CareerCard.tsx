@@ -9,7 +9,7 @@ export const CareerCard = ({ id, title, description, careerTags, slug }: Career)
             </svg>
             <div className="contentbox">
                 <h5 className="career-title text-uppercase fw-bold">{title}</h5>
-                <div className="content">
+                <div className="content fw-light">
                     <p>{description}</p>
                 </div>
                 <div className="career-tags-list">

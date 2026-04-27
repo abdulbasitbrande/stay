@@ -427,10 +427,10 @@ h6 {
     }
   }
 
-  &.secondary-bg{
-    .btn-arrow{
+  &.secondary-bg {
+    .btn-arrow {
       background-color: var(--theme-secondary-color);
-    }   
+    }
   }
 
   &:hover {
@@ -446,7 +446,7 @@ h6 {
     }
   }
 
-  
+
 }
 
 .read-more-btn {
@@ -528,6 +528,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  position: relative;
   z-index: 111;
   background-color: var(--theme-white);
   transition: 0.4s all;

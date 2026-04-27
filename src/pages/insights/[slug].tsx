@@ -8,6 +8,7 @@ import BlogCard from "@/components/sections/BlogCard";
 import { blogs } from "@/mockdata/insights/blogcard";
 import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 import { blogdetail } from "@/mockdata/insights/blogdetail";
+import RichTextRenderer from "@/components/RichTextRenderer";
 
 const InsightDetail = () => {
   const router = useRouter();
@@ -62,9 +63,7 @@ const InsightDetail = () => {
               </ul>
             </div>
             <div className="content">
-              <div
-                dangerouslySetInnerHTML={{ __html: blogdetail.description }}
-              />
+              <RichTextRenderer content={blogdetail.description} />
             </div>
           </div>
         </div>
