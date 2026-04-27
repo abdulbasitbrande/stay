@@ -144,9 +144,25 @@ export default function Home() {
       <section className="offplan-projects sec-padding">
         <div className="sec-wrapper offplan-projects-section-wrapper default-navi">
           <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-7">
+            <div className="sec-title one-row has-spacing">
+              <div className="leftbox">
                 <SectionHeading text="Strategic entry into Dubai’s most sought after off-plan launches." />
+              </div>
+              <div className="rightbox align-self-md-center">
+                <Link href="#" className="see-more-btn secondary-bg">
+                  <span>SEE MORE</span>
+                  <span className="btn-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                      <path d="M1 15.1555L15.1555 1M15.1555 1H2.41555M15.1555 1V13.7399" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            {/* <div className="row align-items-center">
+              <div className="col-lg-7">
+                <SectionHeading text="" />
               </div>
 
               <div className="col-lg-5 text-end">
@@ -157,9 +173,9 @@ export default function Home() {
                   </span>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
-            <div className="pt-5">
+            <div >
               <Carousel
                 items={offplanProperties}
                 renderItem={(item) => <OffplanProperties {...item} />}
@@ -229,10 +245,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="related-sec insights-sec sec-padding">
+      {/* Related Section Start */}
+      <section className="related-sec insights-sec sec-padding sec-bg-secondary default-navi">
         <div className="container">
-          <div className="sec-title --is-medium has-spacing">
-            <SectionHeading text="Start Your Real Estate Journey With Us!" />
+          <div className="sec-title one-row has-spacing">
+            <div className="leftbox">
+              <SectionHeading text="Smarter entry points into Dubai’s newest developments." />
+            </div>
+            <div className="rightbox align-self-md-center">
+              <Link href="#" className="see-more-btn">
+                <span>SEE MORE</span>
+                <span className="btn-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path d="M1 15.1555L15.1555 1M15.1555 1H2.41555M15.1555 1V13.7399" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
           </div>
           <div className="realted-insights-wrapper">
             <Carousel
@@ -255,6 +284,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+      {/* Related Section End */}
+    </Layout >
   );
 }

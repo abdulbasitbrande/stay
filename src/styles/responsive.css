@@ -53,6 +53,10 @@
     max-width: 100%;
   }
 
+  .sec-title.one-row .leftbox {
+    max-width: 70%;
+  }
+
   .sec-title.is-tb-space {
     margin-bottom: 40px;
   }
@@ -119,9 +123,13 @@
     }
   }
 
+  .form-cta-with-img-sec{
+    margin-bottom: 0;
+  }
 
   .footer-sec {
     padding-top: 50px;
+    background-color: white;
 
     .footer-wrapper {
       padding: 50px 0;
@@ -131,6 +139,11 @@
 }
 
 @media(max-width:767px) {
+  .sec-title.one-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .insight-detail-sec .contentbox {
     max-width: 100%;
     margin-top: 30px;
