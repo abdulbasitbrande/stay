@@ -684,6 +684,7 @@ img#faq-bg {
   -webkit-line-clamp: 2; /* max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
+      margin-bottom: 0 !important;
 }
 
 .action-btns-wrapper {
@@ -703,6 +704,42 @@ img#faq-bg {
   -webkit-line-clamp: 2; /* max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.project-section .mt-4.col-12.col-md-6.col-lg-4 .card-body {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 25px 30px;
+}
+
+.project-section .mt-4.col-12.col-md-6.col-lg-4 .card {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.card h5,
+.card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /* fallback for consistent height */
+  line-height: 1.4;
+  min-height: calc(1.4em * 2); /* 2 lines */
+}
+
+.project-section .mt-4.col-12 .card {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.tags-wrapper {
+    margin-top: 10px;
+}
+
+.project-section .mt-4.col-12.col-md-6.col-lg-4 .card-body h3 {
+    display: block;
 }
 
 /* BUY PAGE */

@@ -56,7 +56,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
             <p className="text-muted mb-1">{property.description}</p>
 
             {/* TAGS */}
-            <div className="d-flex flex-wrap gap-2 mb-3">
+            <div className="d-flex flex-wrap gap-2 mb-3 tags-wrapper">
               {property.tags?.map((tag, i) => (
                 <span key={i} className="badge">
                   {tag}

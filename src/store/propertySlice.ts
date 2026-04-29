@@ -7,12 +7,14 @@ interface State {
   all: Property[];
   filters: Filters;
   appliedFilters: Filters; // used for filtering
+  viewMode: "grid" | "list";
 }
 
 const initialState: State = {
   all: [],
   filters: structuredClone(defaultFilters),
   appliedFilters: structuredClone(defaultFilters),
+  viewMode: "grid",
 };
 
 const propertySlice = createSlice({
@@ -41,10 +43,14 @@ const propertySlice = createSlice({
     resetFilters(state) {
       state.filters = structuredClone(defaultFilters);
     },
+
+    setViewMode(state, action: PayloadAction<"grid" | "list">) {
+      state.viewMode = action.payload;
+    },
   },
 });
 
-export const { setProperties, updateFilter, resetFilters, applyFilters } =
+export const { setProperties, updateFilter, resetFilters, applyFilters, setViewMode } =
   propertySlice.actions;
 
 export default propertySlice.reducer;

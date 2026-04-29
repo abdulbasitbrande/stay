@@ -1174,236 +1174,499 @@ header {
 
 /* FILTER */
 
-.pill-filters-wrapper {
-  background: #f6f6f6;
-  padding: 15px 0px;
-}
-
-.pill-filters {
+.filtersSection {
+  background-color: #f8f9fa;
+  padding: 30px 0;
   width: 100%;
 }
 
-.pill-filter-bar {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid #cfcfcf;
-  border-radius: 10px;
-  /* background: #fff; */
-  overflow: visible;
-  padding: 6px;
-  gap: 0;
+.filtersContainer {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.pill-seg {
+.filtersBar {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  min-height: 42px;
-  color: #2e2e2e;
-}
-
-.pill-seg--grow {
-  flex: 1;
-  min-width: 240px;
-}
-
-.pill-divider {
-  width: 1px;
-  background: #e3e3e3;
-  margin: 6px 2px;
-}
-
-.pill-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  color: #2e2e2e;
-  opacity: 0.85;
-}
-
-.pill-caret {
-  opacity: 0.7;
-}
-
-.pill-control {
-  min-width: 170px;
-}
-
-.pill-control--grow {
-  flex: 1;
-  min-width: 260px;
-}
-
-.pill-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 4px 0 10px;
-}
-
-.pill-btn {
-  height: 42px;
-  padding: 0 18px;
+  /* background: #ffffff; */
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  cursor: pointer;
+  padding: 8px 20px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02); */
 }
 
-.pill-btn--ghost {
-  /* background: #fff; */
-  border-color: #2e2e2e;
-  color: #2e2e2e;
+.filterGroupGrow{
+  padding-left: 0 !important;
+  
 }
 
-.pill-btn--primary {
-  background: #2e2e2e;
-  border-color: #2e2e2e;
-  color: #fff;
-}
-
-.pill-dropdown {
-  position: relative;
-}
-
-.pill-trigger {
-  display: inline-flex;
+.filterGroup {
+  display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 10px;
-  min-height: 42px;
-  border: 0;
+  padding: 8px 16px;
+  position: relative;
   background: transparent;
   cursor: pointer;
-  color: inherit;
 }
 
-.pill-trigger-label {
-  font-size: 13px;
+.filterGroupGrow {
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+.filtersContainer .icon {
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-top: -2px;
+}
+
+.filtersContainer .divider {
+  width: 1px;
+  height: 24px;
+  background: #000;
+}
+
+/* React Select Overrides */
+.filtersContainer .selectContainer {
+  flex-grow: 1;
+}
+
+/* .filtersContainer .selectContainer :global(.react-select__control) {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  min-height: auto;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
   font-weight: 500;
-  white-space: nowrap;
+  color: #334155;
+} */
+
+/* .filtersContainer .selectContainer :global(.react-select__value-container) {
+  padding: 0 4px;
 }
 
-.pill-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  background: #fff;
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  padding: 12px;
-  min-width: 260px;
-  z-index: 50;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
+.filtersContainer .selectContainer :global(.react-select__indicator-separator) {
+  display: none;
+} */
 
-.pill-menu-row {
-  display: flex;
-  gap: 10px;
-}
+/* .filtersContainer .selectContainer :global(.react-select__dropdown-indicator) {
+  color: #94a3b8;
+  padding: 0;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+} */
 
-.pill-menu-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.pill-menu-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #666;
-}
-
-.pill-menu input {
-  width: 100%;
-  border: 1px solid #d7d7d7;
+/* .filtersContainer .selectContainer :global(.react-select__menu) {
   border-radius: 8px;
-  padding: 10px 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  z-index: 50;
+  margin-top: 16px;
+  width: 200px;
+} */
+
+/* Search specific override */
+/* .filtersContainer .searchContainer:global(.react-select__menu) {
+  width: 350px;
+} */
+
+/* Custom Dropdown Trigger (for Price, Beds, Size) */
+.filtersContainer .dropdownTrigger {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0;
+  color: #334155;
+  font-weight: 500;
+  font-size: 14px;
   outline: none;
-  font-size: 13px;
 }
 
-.pill-advanced {
-  margin-top: 10px;
-  border: 1px solid #e3e3e3;
-  border-radius: 12px;
-  /* background: #fff; */
-  padding: 12px;
+.filtersContainer .dropdownMenu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  min-width: 350px;
+  z-index: 50;
 }
 
-.pill-advanced-row {
+.filtersContainer .inputRow {
   display: flex;
   gap: 12px;
-  align-items: flex-end;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.pill-advanced-item {
-  min-width: 260px;
-  flex: 1;
+.filtersContainer .inputRow input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
 }
 
-.pill-advanced-label {
+.filtersContainer .sliderContainer {
+  padding: 12px 8px;
+}
+
+.filtersContainer .sliderMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Actions */
+.filtersContainer .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding-left: 16px;
+}
+
+.filtersContainer .btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #2e2e2e;
-  margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
 }
 
-.pill-advanced-actions {
+.filtersContainer .btnGhost {
+  /* background: #ffffff; */
+  color: #000000;
+  border: 1px solid #d1d5db;
+}
+
+.filtersContainer .btnGhost:hover {
+  background: #000;
+  color: #fff;
+}
+
+.filtersContainer .btnPrimary {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.filtersContainer .btnPrimary:hover {
+  background: #1f2937;
+}
+
+/* Advanced Filters */
+.filtersContainer .advancedFilters {
+  background: #ffffff;
+  border-radius: 8px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 0 16px;
+  margin-top: 0;
+  border: 1px solid transparent;
+}
+
+.filtersContainer .advancedFilters.open {
+  max-height: 600px;
+  opacity: 1;
+  padding: 16px;
+  margin-top: 16px;
+  border-color: #e2e8f0;
+}
+
+.filtersContainer .advancedFiltersContent {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filtersContainer .advancedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filtersContainer .advancedLabel {
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex: 0 0 auto;
-}
-
-.pill-selected {
-  font-size: 12px;
-  color: #666;
-}
-
-/* react-select inside pill */
-.pill-select__control {
-  border: 0 !important;
-  box-shadow: none !important;
-  min-height: 30px !important;
-  background: transparent !important;
-}
-
-.pill-select__value-container {
-  padding: 0 !important;
-}
-
-.pill-select__placeholder {
-  color: #7a7a7a !important;
+  gap: 6px;
   font-size: 13px;
+  font-weight: 400;
+  color: #000;
+  text-transform: uppercase;
 }
 
-.pill-select__indicator-separator {
+ .filtersContainer .advancedActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.filtersContainer .checkboxList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+
+.filtersContainer .checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+  width: calc(16.666% - 12px); /* 6 columns by default */
+  min-width: 130px;
+}
+
+.filtersContainer .checkboxLabel input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #000000;
+}
+
+.react-select__control {
+    background: transparent !important;
+    border: 0 !important;
+}
+
+.react-select__placeholder, .filterGroup button {
+    color: #000 !important;
+    font-family: 'Inter'!important;
+    font-size: 14px!important;
+    font-weight:400!important
+}
+
+.react-select__indicators > span{
   display: none;
 }
 
-.pill-select__dropdown-indicator {
-  padding: 0 2px !important;
-  opacity: 0.7;
+svg.lucide.lucide-chevron-down {stroke: #000;}
+
+.react-select__indicator svg {
+    fill: rgb(0 0 0);
+    line-height: 1;
+    stroke: rgb(248 249 250);
+    stroke-width: 0.5px;
+    width: 15px;
 }
 
-.pill-select__menu {
-  z-index: 80;
+.property-title {
+  font-size: 20px;
+  color: #111827;
 }
 
-.pill-select__dropdown-indicator {
-  display: none !important;
+.property-count {
+  font-size: 14px;
+  color: #3b82f6;
+}
+
+.toggle-btn {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #6b7280;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggle-btn.active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+
+.view-toggle button {
+    padding: 8px 15px;
+    font-family: "inter";
+    font-weight: 400;
+}
+
+.sort-label {
+  font-size: 12px;
+  color: #2E2E2E;
+  font-weight: 400;
+}
+
+.sort-select {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2E2E2E;
+  border-radius: 6px;
+  padding: 12px 32px 12px 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+  cursor: pointer;
+  width: 180px;
+}
+
+.advancedActions span {
+    color: #000 !important;
+}
+
+
+
+.cusPagination {
+  margin-top: 40px;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pagination-btn {
+  border: none;
+  background: #111827;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #1f2937;
+}
+
+.pagination-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.pagination-text {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* --- Responsive Filters --- */
+
+@media (max-width: 1024px) {
+  .filtersBar {
+    flex-wrap: wrap;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .filterGroup {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    flex: 1 1 140px;
+  }
+
+  .filterGroupGrow {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .actions {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    padding-left: 0;
+  }
+
+  .checkboxLabel {
+    width: calc(33.333% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .filtersBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dropdownMenu {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* .searchContainer :global(.react-select__menu) {
+    width: 100%;
+  } */
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .checkboxLabel {
+    width: calc(50% - 12px);
+  }
+
+  .advancedFilters.open {
+    max-height: 1200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkboxLabel {
+    width: 100%;
+  }
 }

@@ -1,28 +1,43 @@
 import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/types/property";
+import { useSelector } from "react-redux";
 
 interface Props {
   data: Property[];
 }
 
 export default function PropertyList({ data }: Props) {
+  const { viewMode } = useSelector((s: any) => s.property);
+
   return (
     <div className="listing">
       <div className="listing-wrapper">
         <div className="container project-section">
           <div className="row">
             {data.map((item) => (
-              <div className="col-12 mt-4">
-                <div className="row">
+              <div
+                key={item.id}
+                className={`mt-4 ${viewMode === "grid" ? "col-12 col-md-6 col-lg-4" : "col-12"}`}
+              >
+                {viewMode === "grid" ? (
                   <PropertyCard
-                    key={item.id}
                     property={{
                       ...item,
-                      variant: "large",
+                      variant: "small",
                     }}
-                    cusClass="listing-cards"
+                    cusClass="listing-cards h-100"
                   />
-                </div>
+                ) : (
+                  
+                    <PropertyCard
+                      property={{
+                        ...item,
+                        variant: "large",
+                      }}
+                      cusClass="listing-cards h-100"
+                    />
+             
+                )}
               </div>
             ))}
           </div>

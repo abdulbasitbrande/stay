@@ -13,6 +13,7 @@ import { filterProperties } from "@/utils/filter";
 import Filters from "./Filters";
 import PropertyList from "./PropertyList";
 import { AppDispatch } from "@/store";
+import { LayoutGrid, List } from "lucide-react";
 
 export default function PropertyPage({ purpose }: any) {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,7 +21,7 @@ export default function PropertyPage({ purpose }: any) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const { all, appliedFilters } = useSelector((s: any) => s.property);
+  const { all, appliedFilters, viewMode } = useSelector((s: any) => s.property);
   const [page, setPage] = useState(1);
   const pageSize = 6;
 
@@ -216,33 +217,93 @@ export default function PropertyPage({ purpose }: any) {
     <div className="propertyPage pb-5">
       <Filters />
 
+<div className="property-header container mt-5 mb-4">
+  <div className="property-header-inner d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+    
+    <div>
+      <h4 className="property-title fw-bold mb-1 text-uppercase">
+        Properties For {purpose === "buy" ? "Sale" : "Rent"} In Dubai
+      </h4>
+      <p className="property-count mb-0 fw-semibold">
+        {sorted.length.toLocaleString()} LISTINGS
+      </p>
+    </div>
+
+    <div className="property-actions d-flex align-items-center gap-3 mt-3 mt-md-0">
+      
+      {/* View Toggle */}
+      <div className="view-toggle d-flex gap-2">
+        <button
+          className={`btn toggle-btn ${viewMode === "list" ? "active" : ""}`}
+          onClick={() =>
+            dispatch({ type: "property/setViewMode", payload: "list" })
+          }
+        >
+          <List size={16} /> LIST
+        </button>
+
+        <button
+          className={`btn toggle-btn ${viewMode === "grid" ? "active" : ""}`}
+          onClick={() =>
+            dispatch({ type: "property/setViewMode", payload: "grid" })
+          }
+        >
+          <LayoutGrid size={16} /> GRID
+        </button>
+      </div>
+
+      {/* Sort Dropdown */}
+      <div className="sort-box d-flex align-items-center gap-2">
+        <span className="sort-label">SORT BY:</span>
+        <select
+          className="form-select sort-select"
+          value={appliedFilters.sort || "newest"}
+          onChange={(e) => {
+            dispatch(updateFilter({ key: "sort", value: e.target.value }));
+            dispatch(applyFilters());
+          }}
+        >
+          <option value="newest">LATEST PROPERTIES</option>
+          <option value="price_desc">PRICE: HIGH TO LOW</option>
+          <option value="price_asc">PRICE: LOW TO HIGH</option>
+          <option value="beds_desc">BEDS: HIGH TO LOW</option>
+          <option value="beds_asc">BEDS: LOW TO HIGH</option>
+          <option value="size_desc">SIZE: HIGH TO LOW</option>
+          <option value="size_asc">SIZE: LOW TO HIGH</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+</div>
+
       <PropertyList data={paged} />
 
-      <div className="cusPagination">
-        <div
-          style={{ display: "flex", justifyContent: "center", marginTop: 20 }}
-        >
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            <button
-              className="butn"
-              disabled={safePage <= 1}
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-            >
-              Prev
-            </button>
-            <span style={{ fontSize: 14 }}>
-              Page {safePage} of {totalPages}
-            </span>
-            <button
-              className="butn"
-              disabled={safePage >= totalPages}
-              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      </div>
+<div className="cusPagination">
+  <div className="pagination-wrapper">
+    <div className="pagination-inner">
+      <button
+        className="pagination-btn"
+        disabled={safePage <= 1}
+        onClick={() => setPage((p) => Math.max(1, p - 1))}
+      >
+        Prev
+      </button>
+
+      <span className="pagination-text">
+        Page {safePage} of {totalPages}
+      </span>
+
+      <button
+        className="pagination-btn"
+        disabled={safePage >= totalPages}
+        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
     </div>
   );
 }
