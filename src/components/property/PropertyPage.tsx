@@ -23,6 +23,7 @@ export default function PropertyPage({ purpose }: any) {
 
   const { all, appliedFilters, viewMode } = useSelector((s: any) => s.property);
   const [page, setPage] = useState(1);
+  const [isFiltering, setIsFiltering] = useState(true);
   const pageSize = 6;
 
   // 1️⃣ Load data
@@ -204,6 +205,9 @@ export default function PropertyPage({ purpose }: any) {
   // reset pagination whenever applied filters change
   useEffect(() => {
     setPage(1);
+    setIsFiltering(true);
+    const timer = setTimeout(() => setIsFiltering(false), 800);
+    return () => clearTimeout(timer);
   }, [appliedFilters]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / pageSize));
@@ -277,7 +281,26 @@ export default function PropertyPage({ purpose }: any) {
   </div>
 </div>
 
-      <PropertyList data={paged} />
+      {isFiltering ? (
+        <div className="container project-section mb-4">
+          <div className="row">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className={`mt-4 ${viewMode === "grid" ? "col-12 col-md-6 col-lg-4" : "col-12"}`}>
+                <div 
+                  style={{ 
+                    height: viewMode === "grid" ? '400px' : '220px', 
+                    backgroundColor: '#e2e8f0', 
+                    borderRadius: '12px', 
+                    animation: 'pulse 1.5s infinite ease-in-out' 
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <PropertyList data={paged} />
+      )}
 
 <div className="cusPagination">
   <div className="pagination-wrapper">

@@ -78,44 +78,26 @@ export default function Filters() {
     return Number.isFinite(n) ? n : null;
   };
 
-  const typeOptions = [
-    { value: "villa", label: "Villa" },
-    { value: "apartment", label: "Apartment" },
-    { value: "penthouse", label: "Penthouse" },
-  ];
+  const typeOptions = useMemo(() => {
+    const types = Array.from(new Set((all ?? []).map((p: any) => p.type).filter(Boolean)));
+    return types.map(t => ({
+      value: t as string,
+      label: (t as string).charAt(0).toUpperCase() + (t as string).slice(1)
+    }));
+  }, [all]);
 
-  const amenitiesOptions = [
-    { value: "pool", label: "Pool" },
-    { value: "gym", label: "Gym" },
-    { value: "garden", label: "Garden" },
-    { value: "balcony", label: "Balcony" },
-    { value: "parking", label: "Parking" },
-    { value: "security", label: "Security" },
-    { value: "central_ac", label: "Central A/C" },
-    { value: "maids_room", label: "Maid's Room" },
-    { value: "study", label: "Study" },
-    { value: "builtin_wardrobes", label: "Built-in Wardrobes" },
-    { value: "walkin_closet", label: "Walk-in Closet" },
-    { value: "private_pool", label: "Private Pool" },
-    { value: "private_garden", label: "Private Garden" },
-    { value: "water_view", label: "View of Water" },
-    { value: "landmark_view", label: "View of Landmark" },
-    { value: "pets_allowed", label: "Pets Allowed" },
-    { value: "covered_parking", label: "Covered Parking" },
-    { value: "shared_gym", label: "Shared Gym" },
-    { value: "shared_pool", label: "Shared Pool" },
-    { value: "shared_spa", label: "Shared Spa" },
-    { value: "concierge", label: "Concierge Service" },
-    { value: "play_area", label: "Children's Play Area" },
-    { value: "kids_pool", label: "Children's Pool" },
-    { value: "bbq_area", label: "Barbecue Area" },
-    { value: "conference_room", label: "Conference Room" },
-    { value: "golf_course", label: "Golf Course" },
-    { value: "tennis_court", label: "Tennis Court" },
-    { value: "basketball_court", label: "Basketball Court" },
-    { value: "retail", label: "Retail in Building" },
-    { value: "high_floor", label: "High Floor" }
-  ];
+  const amenitiesOptions = useMemo(() => {
+    const allAmenities = new Set<string>();
+    (all ?? []).forEach((p: any) => {
+      if (Array.isArray(p.amenities)) {
+        p.amenities.forEach((a: string) => allAmenities.add(a));
+      }
+    });
+    return Array.from(allAmenities).map(a => {
+      const label = a.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      return { value: a, label };
+    });
+  }, [all]);
 
   return (
     <div className="filtersSection">
