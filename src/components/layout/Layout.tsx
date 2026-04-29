@@ -8,14 +8,15 @@ interface LayoutProps {
   children: React.ReactNode;
   mainClass?: string;
   headerClass?: string;
+  footerClass?: string,
 }
 
-export default function Layout({ children, mainClass, headerClass }: LayoutProps) {
+export default function Layout({ children, mainClass, headerClass, footerClass }: LayoutProps) {
   return (
     <>
-      <Header className={headerClass} />
+      <Header headerClass={headerClass} />
       <main className={mainClass}>{children}</main>
-      <Footer />
+      <Footer footerClass={footerClass} />
     </>
   );
 }
