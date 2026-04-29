@@ -16,7 +16,7 @@ export const InnerBannerSection = ({ InnerBannerTitle, InnerBannerDescription, I
                     <div className="col-lg-6 has-top-space">
                         <div className="contentbox is-medium sec-padding --large">
                             <SectionHeading text={InnerBannerTitle} />
-                            <div className="content text-justify">
+                            <div className="content text-justify fw-light">
                                 <div dangerouslySetInnerHTML={{ __html: InnerBannerDescription }} />
                             </div>
                             <a href={InnerBannerButtonLink} className="butn butn-primary-filled">

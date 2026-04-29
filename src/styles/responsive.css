@@ -23,6 +23,22 @@
 /* Reponsive Start */
 
 @media(max-width:1440px) {
+
+  .sec-padding {
+    &.\--large {
+      padding: 80px 0;
+    }
+
+    &.\--xlarge {
+      padding: 100px 0;
+    }
+
+    &.\--xxlarge {
+      padding: 120px 0;
+    }
+  }
+
+
   .sec-title.--is-medium {
     max-width: 75%;
   }
@@ -48,6 +64,23 @@
 }
 
 @media (max-width: 991px) {
+
+  .sec-padding {
+    padding: 60px 0;
+
+    &.\--large {
+      padding: 60px 0;
+    }
+
+    &.\--xlarge {
+      padding: 80px 0;
+    }
+
+    &.\--xxlarge {
+      padding: 100px 0;
+    }
+  }
+
 
   .sec-title.--is-medium {
     max-width: 100%;
@@ -123,8 +156,9 @@
     }
   }
 
-  .form-cta-with-img-sec{
+  .form-cta-with-img-sec {
     margin-bottom: 0;
+    padding-bottom: 40px;
   }
 
   .footer-sec {
@@ -148,4 +182,33 @@
     max-width: 100%;
     margin-top: 30px;
   }
+
+  .inner-banner-sec {
+    margin-bottom: 40px;
+  }
+
+  .careers-list-sec {
+    padding-top: 60px !important;
+    background: var(--theme-secondary-color);
+  }
+
+}
+
+@media(max-width:600px) {
+  .sec-padding {
+    padding: 60px 0;
+
+    &.\--large {
+      padding: 60px 0;
+    }
+
+    &.\--xlarge {
+      padding: 80px 0;
+    }
+
+    &.\--xxlarge {
+      padding: 100px 0;
+    }
+  }
+
 }

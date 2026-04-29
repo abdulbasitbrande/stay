@@ -265,12 +265,139 @@
                 border-radius: 6px;
                 border: 1px solid #9F9F9F;
                 background: rgba(159, 159, 159, 0.17);
-                padding: 10px 20px;
+                padding: 10px 18px;
             }
         }
 
         .btn-wrapper {
             transform: translateY(-10px);
+        }
+    }
+}
+
+
+/* Career Detail Section */
+.career-detail-sec {
+    .career-details-wrapper {
+        .career-detailbox {
+            padding: 45px;
+            background-color: var(--theme-secondary-color);
+            border-radius: 16px;
+            margin-bottom: 15px;
+
+            .cd-title {
+                margin-bottom: 20px;
+                /* font-family: var(--theme-font-primary); */
+            }
+
+            .content {
+                text-align: justify;
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                ul,
+                ol {
+                    padding-left: 15px;
+                    margin-bottom: 0;
+
+                    li {
+                        margin-bottom: 5px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .btn-wrapper {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .career-sidebar {
+        max-width: calc(100% - 100px);
+        margin-left: auto;
+        margin-top: 50px;
+        position: sticky;
+        top: 20px;
+
+        .career-sidebar-title {
+            border-bottom: 1px solid #D4D4D4;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            h5 {
+                margin-bottom: 5px;
+            }
+
+            li {
+                border-bottom: 1px solid #D4D4D4;
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+}
+
+
+
+
+/* About Smart Card Section */
+.about-smartcard-sec {
+    padding-top: 160px !important;
+    position: relative;
+    background-color: unset;
+    margin-bottom: 20px;
+
+    .aboutshape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Img With Content Section */
+
+.img-with-content-sec {
+
+    &.left-img-with-content-sec{
+        .contentbox{
+            margin-left: auto;
+        }
+    }
+    &.is-footer {
+           margin-bottom: -105px;
+    }
+
+    .imgbox {
+        overflow: hidden;
+        aspect-ratio: 1/0.978;
+
+        &.has-border-radius {
+            border-radius: 25px;
+        }
+    }
+
+    .contentbox {
+        max-width: calc(100% - 50px);
+
+        .butn {
+            margin-top: 20px;
         }
     }
 }

@@ -514,6 +514,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  position: relative;
   z-index: 111;
   background-color: var(--theme-white);
   transition: 0.4s all;
@@ -980,6 +981,11 @@ header {
   padding-top: 80px;
   background-color: var(--theme-secondary-color);
   position: relative;
+
+  &.no-bg {
+    background: unset;
+  }
+
 
   .footer-shape {
     position: absolute;

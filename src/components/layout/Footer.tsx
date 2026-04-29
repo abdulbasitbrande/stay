@@ -1,9 +1,12 @@
 import Link from "next/link";
 
+interface Footer {
+  footerClass?: string
+}
 // components/Footer.jsx
-export default function Footer() {
+export default function Footer({ footerClass }: Footer) {
   return (
-    <footer className="footer-sec">
+    <footer className={`footer-sec ${footerClass ?? ''}`}>
       <svg className="footer-shape" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1920 656" fill="none">
         <path d="M501.948 0H-7C-25.2254 0 -40 14.7746 -40 33V364.5V696C-40 714.225 -25.2254 729 -6.99998 729H1937C1955.23 729 1970 714.225 1970 696V410.967V125.934C1970 107.708 1955.23 92.9337 1937 92.9337H1117.44H627.851C619.515 92.9337 611.487 89.7786 605.382 84.1024L524.418 8.8313C518.312 3.15509 510.285 0 501.948 0Z" fill="white" />
       </svg>

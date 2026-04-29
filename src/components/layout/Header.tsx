@@ -6,14 +6,14 @@ import { useEffect } from "react";
 
 
 interface HeaderProps {
-  className?: string;
+  headerClass?: string;
 }
 
-export default function Header({ className }: HeaderProps) {
+export default function Header({ headerClass }: HeaderProps) {
   return (
     // Header Start
     <>
-      <header className={`header ${className ?? ""}`}>
+      <header className={`header ${headerClass ?? ""}`}>
         <div className="container">
           <div className="header-wrapper">
             <div className="leftbox">
