@@ -12,7 +12,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
   const variant = property.variant || "small";
 
   return (
-    <div className={`card border-0 h-100  ${variant ?? ""}`}>
+    <div className={`${variant ?? ""}`}>
       <Link
         href={`/${property.purpose}/${property.slug}`}
         className="text-decoration-none"

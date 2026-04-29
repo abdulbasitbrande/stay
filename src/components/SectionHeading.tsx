@@ -10,39 +10,61 @@ gsap.registerPlugin(ScrollTrigger);
 type Props = {
   text: string;
   className?: string;
+  deps?: any; // 👈 important (we'll pass viewMode)
 };
 
-export default function ScrollTextHeading({ text, className = "" }: Props) {
+export default function ScrollTextHeading({
+  text,
+  className = "",
+  deps,
+}: Props) {
   const ref = useRef<HTMLHeadingElement | null>(null);
+  const splitRef = useRef<any>(null);
+  const animRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
     if (!ref.current) return;
 
-    const split = new SplitType(ref.current, { types: "words" });
+    // cleanup old animation
+    animRef.current?.kill();
+    splitRef.current?.revert();
+
+    const split = new SplitType(ref.current, {
+      types: "words",
+    });
+
+    splitRef.current = split;
 
     const words = split.words;
 
     gsap.set(words, {
       opacity: 0.2,
+      // y: 5,
+      // scale:1
     });
 
-    gsap.to(words, {
+    animRef.current = gsap.to(words, {
       opacity: 1,
-      stagger: 0.3,
+      // y: 0,
+      // scale:1.05,
+      stagger: 0.8,
       ease: "none",
       scrollTrigger: {
         trigger: ref.current,
         start: "top-=200 center",
         end: "bottom center",
         scrub: 1.2,
+        // markers: true,
       },
     });
 
+    ScrollTrigger.refresh();
+
     return () => {
+      animRef.current?.kill();
       split.revert();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [text, deps]); // 👈 KEY FIX
 
   return (
     <h2 ref={ref} className={`scroll-text ${className}`}>

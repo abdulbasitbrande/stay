@@ -684,7 +684,7 @@ img#faq-bg {
   -webkit-line-clamp: 2; /* max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
-      margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .action-btns-wrapper {
@@ -707,14 +707,14 @@ img#faq-bg {
 }
 
 .project-section .mt-4.col-12.col-md-6.col-lg-4 .card-body {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding: 25px 30px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 25px 30px;
 }
 
 .project-section .mt-4.col-12.col-md-6.col-lg-4 .card {
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .card h5,
@@ -730,16 +730,113 @@ img#faq-bg {
 }
 
 .project-section .mt-4.col-12 .card {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .tags-wrapper {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .project-section .mt-4.col-12.col-md-6.col-lg-4 .card-body h3 {
-    display: block;
+  display: block;
 }
+
+/* MORTGAGE CALCULATOR */
+
+.mortgage-box {
+  background: #f3f4f6;
+  padding: 40px;
+  border-radius: 6px;
+}
+
+/* TITLE (only variant 1) */
+.calc-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.mortgage-box label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.calc-input {
+  position: relative;
+}
+
+.calc-input input {
+  width: 100%;
+  height: 48px;
+  padding: 0 60px 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.calc-input span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* FOOTER DEFAULT */
+.calc-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* VARIANT 2 FOOTER */
+.variant-2-footer {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TEXT */
+.monthly-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.monthly-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f5aa8;
+}
+
+/* BUTTON */
+.consult-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 260px;
+}
+
+.consult-btn:hover {
+  background: #111;
+}
+
+.mortgage-box.variant-2 {
+  background: transparent;
+  padding: 0;
+  margin-top: 50px;
+}
+
+/* MORTGAGE CALCULATOR */
 
 /* BUY PAGE */

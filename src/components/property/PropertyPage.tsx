@@ -8,12 +8,19 @@ import {
   updateFilter,
   applyFilters,
 } from "@/store/propertySlice";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { properties } from "@/mockdata/properties";
 import { filterProperties } from "@/utils/filter";
 import Filters from "./Filters";
 import PropertyList from "./PropertyList";
 import { AppDispatch } from "@/store";
-import { LayoutGrid, List } from "lucide-react";
+import { LayoutGrid, Link, List } from "lucide-react";
+import MortgageCalculatorForm from "../MortgageCalculatorForm";
+import Stay from "../Stay";
+import SectionHeading from "../SectionHeading";
+import BrandsCard from "../Brands";
+import { brands } from "@/mockdata/brands";
+import FormCtaWithImage from "../sections/FormCtaWithImage";
 
 export default function PropertyPage({ purpose }: any) {
   const dispatch = useDispatch<AppDispatch>();
@@ -217,81 +224,93 @@ export default function PropertyPage({ purpose }: any) {
     return sorted.slice(start, start + pageSize);
   }, [sorted, safePage]);
 
+  useEffect(() => {
+    if (!isFiltering) {
+      const timer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isFiltering, paged]);
+
   return (
     <div className="propertyPage pb-5">
       <Filters />
 
-<div className="property-header container mt-5 mb-4">
-  <div className="property-header-inner d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-    
-    <div>
-      <h4 className="property-title fw-bold mb-1 text-uppercase">
-        Properties For {purpose === "buy" ? "Sale" : "Rent"} In Dubai
-      </h4>
-      <p className="property-count mb-0 fw-semibold">
-        {sorted.length.toLocaleString()} LISTINGS
-      </p>
-    </div>
+      <div className="property-header container mt-5 mb-4">
+        <div className="property-header-inner d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+          <div>
+            <h4 className="property-title fw-bold mb-1 text-uppercase">
+              Properties For {purpose === "buy" ? "Sale" : "Rent"} In Dubai
+            </h4>
+            <p className="property-count mb-0 fw-semibold">
+              {sorted.length.toLocaleString()} LISTINGS
+            </p>
+          </div>
 
-    <div className="property-actions d-flex align-items-center gap-3 mt-3 mt-md-0">
-      
-      {/* View Toggle */}
-      <div className="view-toggle d-flex gap-2">
-        <button
-          className={`btn toggle-btn ${viewMode === "list" ? "active" : ""}`}
-          onClick={() =>
-            dispatch({ type: "property/setViewMode", payload: "list" })
-          }
-        >
-          <List size={16} /> LIST
-        </button>
+          <div className="property-actions d-flex align-items-center gap-3 mt-3 mt-md-0">
+            {/* View Toggle */}
+            <div className="view-toggle d-flex gap-2">
+              <button
+                className={`btn toggle-btn ${viewMode === "list" ? "active" : ""}`}
+                onClick={() =>
+                  dispatch({ type: "property/setViewMode", payload: "list" })
+                }
+              >
+                <List size={16} /> LIST
+              </button>
 
-        <button
-          className={`btn toggle-btn ${viewMode === "grid" ? "active" : ""}`}
-          onClick={() =>
-            dispatch({ type: "property/setViewMode", payload: "grid" })
-          }
-        >
-          <LayoutGrid size={16} /> GRID
-        </button>
+              <button
+                className={`btn toggle-btn ${viewMode === "grid" ? "active" : ""}`}
+                onClick={() =>
+                  dispatch({ type: "property/setViewMode", payload: "grid" })
+                }
+              >
+                <LayoutGrid size={16} /> GRID
+              </button>
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="sort-box d-flex align-items-center gap-2">
+              <span className="sort-label">SORT BY:</span>
+              <select
+                className="form-select sort-select"
+                value={appliedFilters.sort || "newest"}
+                onChange={(e) => {
+                  dispatch(
+                    updateFilter({ key: "sort", value: e.target.value }),
+                  );
+                  dispatch(applyFilters());
+                }}
+              >
+                <option value="newest">LATEST PROPERTIES</option>
+                <option value="price_desc">PRICE: HIGH TO LOW</option>
+                <option value="price_asc">PRICE: LOW TO HIGH</option>
+                <option value="beds_desc">BEDS: HIGH TO LOW</option>
+                <option value="beds_asc">BEDS: LOW TO HIGH</option>
+                <option value="size_desc">SIZE: HIGH TO LOW</option>
+                <option value="size_asc">SIZE: LOW TO HIGH</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Sort Dropdown */}
-      <div className="sort-box d-flex align-items-center gap-2">
-        <span className="sort-label">SORT BY:</span>
-        <select
-          className="form-select sort-select"
-          value={appliedFilters.sort || "newest"}
-          onChange={(e) => {
-            dispatch(updateFilter({ key: "sort", value: e.target.value }));
-            dispatch(applyFilters());
-          }}
-        >
-          <option value="newest">LATEST PROPERTIES</option>
-          <option value="price_desc">PRICE: HIGH TO LOW</option>
-          <option value="price_asc">PRICE: LOW TO HIGH</option>
-          <option value="beds_desc">BEDS: HIGH TO LOW</option>
-          <option value="beds_asc">BEDS: LOW TO HIGH</option>
-          <option value="size_desc">SIZE: HIGH TO LOW</option>
-          <option value="size_asc">SIZE: LOW TO HIGH</option>
-        </select>
-      </div>
-
-    </div>
-  </div>
-</div>
 
       {isFiltering ? (
         <div className="container project-section mb-4">
           <div className="row">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className={`mt-4 ${viewMode === "grid" ? "col-12 col-md-6 col-lg-4" : "col-12"}`}>
-                <div 
-                  style={{ 
-                    height: viewMode === "grid" ? '400px' : '220px', 
-                    backgroundColor: '#e2e8f0', 
-                    borderRadius: '12px', 
-                    animation: 'pulse 1.5s infinite ease-in-out' 
+              <div
+                key={i}
+                className={`mt-4 ${viewMode === "grid" ? "col-12 col-md-6 col-lg-4" : "col-12"}`}
+              >
+                <div
+                  style={{
+                    height: viewMode === "grid" ? "400px" : "220px",
+                    backgroundColor: "#e2e8f0",
+                    borderRadius: "12px",
+                    animation: "pulse 1.5s infinite ease-in-out",
                   }}
                 />
               </div>
@@ -302,31 +321,77 @@ export default function PropertyPage({ purpose }: any) {
         <PropertyList data={paged} />
       )}
 
-<div className="cusPagination">
-  <div className="pagination-wrapper">
-    <div className="pagination-inner">
-      <button
-        className="pagination-btn"
-        disabled={safePage <= 1}
-        onClick={() => setPage((p) => Math.max(1, p - 1))}
-      >
-        Prev
-      </button>
+      <div className="cusPagination">
+        <div className="pagination-wrapper">
+          <div className="pagination-inner">
+            <button
+              className="pagination-btn"
+              disabled={safePage <= 1}
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+            >
+              Prev
+            </button>
 
-      <span className="pagination-text">
-        Page {safePage} of {totalPages}
-      </span>
+            <span className="pagination-text">
+              Page {safePage} of {totalPages}
+            </span>
 
-      <button
-        className="pagination-btn"
-        disabled={safePage >= totalPages}
-        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-      >
-        Next
-      </button>
-    </div>
-  </div>
-</div>
+            <button
+              className="pagination-btn"
+              disabled={safePage >= totalPages}
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section className="mortgage-calculator overflow-hidden position-relative">
+        <div className="sec-wrapper mortgage-calculator-wrapper">
+          <Stay />
+          <div className="container position-relative">
+            <div className="row vh-100 align-items-center">
+              <div className="col-lg-6">
+                <SectionHeading
+                  className="mb-4"
+                  text="Calculate your mortgage and plan your investment with confidence."
+                  deps={viewMode}
+                />
+
+                <MortgageCalculatorForm variant={2} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="brands-section sec-padding">
+        <div className="sec-wrapper brands-section-wrapper">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-7 text-center">
+                <SectionHeading
+                  text="Discover high-performing Dubai locations, selected through data-driven intelligence."
+                  deps={viewMode}
+                />
+              </div>
+            </div>
+            <div className="pt-5">
+              <div className="brands-logo-wrapper">
+                {brands.map((item) => (
+                  <BrandsCard key={item.id} {...item} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FormCtaWithImage
+        formImage="assets/images/buycta.jpg"
+        formTitle="Start Your Real Estate Journey With Us!"
+      />
     </div>
   );
 }

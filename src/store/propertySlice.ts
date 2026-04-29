@@ -14,7 +14,7 @@ const initialState: State = {
   all: [],
   filters: structuredClone(defaultFilters),
   appliedFilters: structuredClone(defaultFilters),
-  viewMode: "grid",
+  viewMode: "list",
 };
 
 const propertySlice = createSlice({
