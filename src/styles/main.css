@@ -152,7 +152,8 @@ input::placeholder {
   font-size: 18px;
 }
 
-.project-section .card span.badge {
+.project-section .card span.badge,
+.tags-wrapper .badge {
   background: transparent;
   border-radius: 4px;
   padding: 8px;
@@ -837,6 +838,72 @@ img#faq-bg {
   margin-top: 50px;
 }
 
+.rc-slider-handle {
+  border: 2px solid #000000;
+  opacity: 1;
+}
+
+.rc-slider-track,
+.rc-slider-tracks {
+  background-color: #000;
+}
+
 /* MORTGAGE CALCULATOR */
 
 /* BUY PAGE */
+
+/* DETAIL PAGE */
+
+#lightgallery a > img {
+  width: 100%;
+}
+
+#lightgallery .gallery-buttons a > img {
+  width: 15px;
+  filter: brightness(4) invert(1);
+}
+
+#lightgallery .gallery-buttons {
+  margin-top: -65px !important;
+  margin-left: 25px;
+}
+
+#lightgallery .gallery-buttons a {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 50px;
+}
+
+#lightgallery .col-md-8.gallery-image a.g-img img {
+  height: 565px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#lightgallery .col-md-4 .gallery-image a.g-img img {
+  height: 274px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-block h3 {
+  color: #2858ab;
+}
+
+.info-block {
+  background: #f6f6f6;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.data-block {
+  margin-top: 30px;
+}
+
+/* DETAIL PAGE */

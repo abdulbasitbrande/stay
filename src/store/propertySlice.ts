@@ -50,7 +50,12 @@ const propertySlice = createSlice({
   },
 });
 
-export const { setProperties, updateFilter, resetFilters, applyFilters, setViewMode } =
-  propertySlice.actions;
+export const {
+  setProperties,
+  updateFilter,
+  resetFilters,
+  applyFilters,
+  setViewMode,
+} = propertySlice.actions;
 
 export default propertySlice.reducer;

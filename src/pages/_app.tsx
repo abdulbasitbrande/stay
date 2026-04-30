@@ -10,6 +10,9 @@ import "../../public/assets/fonts/aileron/stylesheet.css";
 import "../../public/assets/fonts/inter/stylesheet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 
 import "@/styles/globals.css";
 import "@/styles/main.css";

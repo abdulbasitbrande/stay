@@ -21,6 +21,7 @@ import SectionHeading from "../SectionHeading";
 import BrandsCard from "../Brands";
 import { brands } from "@/mockdata/brands";
 import FormCtaWithImage from "../sections/FormCtaWithImage";
+import { Property } from "@/types/property";
 
 export default function PropertyPage({ purpose }: any) {
   const dispatch = useDispatch<AppDispatch>();
@@ -35,7 +36,28 @@ export default function PropertyPage({ purpose }: any) {
 
   // 1️⃣ Load data
   useEffect(() => {
-    const data = properties.filter((p) => p.purpose === purpose);
+    const data: Property[] = properties
+      .filter((p) => p.projectData.projectCard.purpose === purpose)
+      .map((p) => {
+        const card = p.projectData.projectCard;
+
+        return {
+          id: card.id,
+          slug: card.slug,
+          purpose: card.purpose,
+          type: card.type,
+          price: card.price,
+          title: card.title,
+          description: card.description,
+          image: card.image,
+          location: card.location,
+          beds: card.beds,
+          areasize: card.areasize,
+          amenities: card.amenities,
+          tags: card.tags,
+        };
+      });
+
     dispatch(setProperties(data));
   }, [purpose, dispatch]);
 
@@ -213,7 +235,7 @@ export default function PropertyPage({ purpose }: any) {
   useEffect(() => {
     setPage(1);
     setIsFiltering(true);
-    const timer = setTimeout(() => setIsFiltering(false), 800);
+    const timer = setTimeout(() => setIsFiltering(false), 300);
     return () => clearTimeout(timer);
   }, [appliedFilters]);
 
@@ -235,7 +257,7 @@ export default function PropertyPage({ purpose }: any) {
   }, [isFiltering, paged]);
 
   return (
-    <div className="propertyPage pb-5">
+    <div className="propertyPage">
       <Filters />
 
       <div className="property-header container mt-5 mb-4">

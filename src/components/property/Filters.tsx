@@ -16,7 +16,7 @@ import {
   Search,
   Banknote,
   BedDouble,
-  Maximize
+  Maximize,
 } from "lucide-react";
 
 const Select = dynamic(() => import("react-select"), {
@@ -42,17 +42,24 @@ export default function Filters() {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as Node;
-      if (priceRef.current && !priceRef.current.contains(target)) setPriceOpen(false);
-      if (bedsRef.current && !bedsRef.current.contains(target)) setBedsOpen(false);
-      if (sizeRef.current && !sizeRef.current.contains(target)) setSizeOpen(false);
+      if (priceRef.current && !priceRef.current.contains(target))
+        setPriceOpen(false);
+      if (bedsRef.current && !bedsRef.current.contains(target))
+        setBedsOpen(false);
+      if (sizeRef.current && !sizeRef.current.contains(target))
+        setSizeOpen(false);
     };
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
   }, []);
 
   useEffect(() => {
-    setPriceMinText(filters.price?.min != null ? String(filters.price.min) : "");
-    setPriceMaxText(filters.price?.max != null ? String(filters.price.max) : "");
+    setPriceMinText(
+      filters.price?.min != null ? String(filters.price.min) : "",
+    );
+    setPriceMaxText(
+      filters.price?.max != null ? String(filters.price.max) : "",
+    );
   }, [filters.price?.min, filters.price?.max]);
 
   const searchOptions = useMemo(() => {
@@ -63,8 +70,14 @@ export default function Filters() {
       new Set((all ?? []).map((p: any) => String(p.location ?? "").trim())),
     ).filter(Boolean);
     return [
-      { label: "Building", options: buildings.map((b) => ({ value: `building:${b}`, label: b })) },
-      { label: "Location", options: locations.map((l) => ({ value: `location:${l}`, label: l })) },
+      {
+        label: "Building",
+        options: buildings.map((b) => ({ value: `building:${b}`, label: b })),
+      },
+      {
+        label: "Location",
+        options: locations.map((l) => ({ value: `location:${l}`, label: l })),
+      },
     ];
   }, [all]);
 
@@ -79,23 +92,38 @@ export default function Filters() {
   };
 
   const typeOptions = useMemo(() => {
-    const types = Array.from(new Set((all ?? []).map((p: any) => p.type).filter(Boolean)));
-    return types.map(t => ({
+    const types = Array.from(
+      new Set((all ?? []).map((p: any) => p.type).filter(Boolean)),
+    );
+    return types.map((t) => ({
       value: t as string,
-      label: (t as string).charAt(0).toUpperCase() + (t as string).slice(1)
+      label: (t as string).charAt(0).toUpperCase() + (t as string).slice(1),
     }));
   }, [all]);
 
   const amenitiesOptions = useMemo(() => {
     const allAmenities = new Set<string>();
+
     (all ?? []).forEach((p: any) => {
       if (Array.isArray(p.amenities)) {
-        p.amenities.forEach((a: string) => allAmenities.add(a));
+        p.amenities.forEach((a: { title: string }) => {
+          if (a?.title) {
+            allAmenities.add(a.title);
+          }
+        });
       }
     });
-    return Array.from(allAmenities).map(a => {
-      const label = a.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-      return { value: a, label };
+
+    return Array.from(allAmenities).map((title) => {
+      const label = title
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+      return {
+        value: title,
+        label,
+      };
     });
   }, [all]);
 
@@ -115,13 +143,26 @@ export default function Filters() {
                 options={searchTypeahead.length >= 3 ? searchOptions : []}
                 placeholder="Search by location or building"
                 onInputChange={(val: string) => setSearchTypeahead(val)}
-                noOptionsMessage={() => searchTypeahead.length < 3 ? "Type at least 3 letters" : "No matches"}
+                noOptionsMessage={() =>
+                  searchTypeahead.length < 3
+                    ? "Type at least 3 letters"
+                    : "No matches"
+                }
                 value={(filters.search ?? []).map((s: string) => ({
                   value: s,
-                  label: s.startsWith("building:") ? s.replace("building:", "") : s.startsWith("location:") ? s.replace("location:", "") : s,
+                  label: s.startsWith("building:")
+                    ? s.replace("building:", "")
+                    : s.startsWith("location:")
+                      ? s.replace("location:", "")
+                      : s,
                 }))}
                 onChange={(val: any) =>
-                  dispatch(updateFilter({ key: "search", value: val ? val.map((v: any) => v.value) : [] }))
+                  dispatch(
+                    updateFilter({
+                      key: "search",
+                      value: val ? val.map((v: any) => v.value) : [],
+                    }),
+                  )
                 }
               />
             </div>
@@ -140,9 +181,19 @@ export default function Filters() {
                 options={typeOptions}
                 placeholder="Property Type"
                 isClearable
-                value={filters.type ? (typeOptions.find((o) => o.value === filters.type) ?? null) : null}
+                value={
+                  filters.type
+                    ? (typeOptions.find((o) => o.value === filters.type) ??
+                      null)
+                    : null
+                }
                 onChange={(val: any) => {
-                  dispatch(updateFilter({ key: "type", value: val ? val.value : null }));
+                  dispatch(
+                    updateFilter({
+                      key: "type",
+                      value: val ? val.value : null,
+                    }),
+                  );
                 }}
               />
             </div>
@@ -175,7 +226,12 @@ export default function Filters() {
                     onChange={(e) => {
                       const raw = e.target.value;
                       setPriceMinText(raw);
-                      dispatch(updateFilter({ key: "price", value: { ...filters.price, min: parsePrice(raw) } }));
+                      dispatch(
+                        updateFilter({
+                          key: "price",
+                          value: { ...filters.price, min: parsePrice(raw) },
+                        }),
+                      );
                     }}
                   />
                   <input
@@ -186,7 +242,12 @@ export default function Filters() {
                     onChange={(e) => {
                       const raw = e.target.value;
                       setPriceMaxText(raw);
-                      dispatch(updateFilter({ key: "price", value: { ...filters.price, max: parsePrice(raw) } }));
+                      dispatch(
+                        updateFilter({
+                          key: "price",
+                          value: { ...filters.price, max: parsePrice(raw) },
+                        }),
+                      );
                     }}
                   />
                 </div>
@@ -217,13 +278,33 @@ export default function Filters() {
                     type="number"
                     placeholder="Min Beds"
                     value={filters.beds.min ?? ""}
-                    onChange={(e) => dispatch(updateFilter({ key: "beds", value: { ...filters.beds, min: e.target.value ? Number(e.target.value) : null } }))}
+                    onChange={(e) =>
+                      dispatch(
+                        updateFilter({
+                          key: "beds",
+                          value: {
+                            ...filters.beds,
+                            min: e.target.value ? Number(e.target.value) : null,
+                          },
+                        }),
+                      )
+                    }
                   />
                   <input
                     type="number"
                     placeholder="Max Beds"
                     value={filters.beds.max ?? ""}
-                    onChange={(e) => dispatch(updateFilter({ key: "beds", value: { ...filters.beds, max: e.target.value ? Number(e.target.value) : null } }))}
+                    onChange={(e) =>
+                      dispatch(
+                        updateFilter({
+                          key: "beds",
+                          value: {
+                            ...filters.beds,
+                            max: e.target.value ? Number(e.target.value) : null,
+                          },
+                        }),
+                      )
+                    }
                   />
                 </div>
               </div>
@@ -260,8 +341,12 @@ export default function Filters() {
                     allowCross={false}
                     value={[sizeMin, sizeMax]}
                     onChange={(value: number | number[]) => {
-                      const [min, max] = Array.isArray(value) ? value : [0, value];
-                      dispatch(updateFilter({ key: "size", value: { min, max } }));
+                      const [min, max] = Array.isArray(value)
+                        ? value
+                        : [0, value];
+                      dispatch(
+                        updateFilter({ key: "size", value: { min, max } }),
+                      );
                     }}
                   />
                 </div>
@@ -294,7 +379,9 @@ export default function Filters() {
               <div className="advancedLabel">Amenities</div>
               <div className="checkboxList">
                 {amenitiesOptions.map((opt) => {
-                  const isChecked = (filters.amenities ?? []).includes(opt.value);
+                  const isChecked = (filters.amenities ?? []).includes(
+                    opt.value,
+                  );
                   return (
                     <label key={opt.value} className="checkboxLabel">
                       <input
@@ -305,7 +392,9 @@ export default function Filters() {
                           const next = e.target.checked
                             ? [...current, opt.value]
                             : current.filter((v: string) => v !== opt.value);
-                          dispatch(updateFilter({ key: "amenities", value: next }));
+                          dispatch(
+                            updateFilter({ key: "amenities", value: next }),
+                          );
                         }}
                       />
                       {opt.label}
@@ -316,10 +405,17 @@ export default function Filters() {
             </div>
 
             <div className="advancedActions">
-              <span style={{ fontSize: 13, color: '#64748b' }}>
-                Active Filters: {
-                  (filters.search?.length ?? 0) + (filters.type ? 1 : 0) + (filters.price?.min != null ? 1 : 0) + (filters.price?.max != null ? 1 : 0) + (filters.beds?.min != null ? 1 : 0) + (filters.beds?.max != null ? 1 : 0) + (filters.size?.min != null ? 1 : 0) + (filters.size?.max != null ? 1 : 0) + (filters.amenities?.length ?? 0)
-                }
+              <span style={{ fontSize: 13, color: "#64748b" }}>
+                Active Filters:{" "}
+                {(filters.search?.length ?? 0) +
+                  (filters.type ? 1 : 0) +
+                  (filters.price?.min != null ? 1 : 0) +
+                  (filters.price?.max != null ? 1 : 0) +
+                  (filters.beds?.min != null ? 1 : 0) +
+                  (filters.beds?.max != null ? 1 : 0) +
+                  (filters.size?.min != null ? 1 : 0) +
+                  (filters.size?.max != null ? 1 : 0) +
+                  (filters.amenities?.length ?? 0)}
               </span>
               <button
                 type="button"
