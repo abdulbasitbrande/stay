@@ -46,7 +46,7 @@ function getRandomGallery() {
 function getRandomTags(): string[] {
   const base = faker.helpers.arrayElements(
     ["VILLA", "APARTMENT", "PENTHOUSE", "DUPLEX", "STUDIO"],
-    1
+    1,
   );
 
   const details = [
@@ -64,18 +64,14 @@ function generatePhone(): number {
     `9715${faker.number.int({
       min: 10000000,
       max: 99999999,
-    })}`
+    })}`,
   );
 }
 
 // -------------------- Main Generator --------------------
 
 export function generateProperty(id: number) {
-  const type = faker.helpers.arrayElement([
-    "villa",
-    "apartment",
-    "penthouse",
-  ]);
+  const type = faker.helpers.arrayElement(["villa", "apartment", "penthouse"]);
 
   const purpose = faker.helpers.arrayElement(["buy", "rent"]);
 

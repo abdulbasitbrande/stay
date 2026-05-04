@@ -71,7 +71,7 @@ export default function DetailPage() {
         </div>
         <div className="row">
           <FormCtaWithImage
-            formImage="assets/images/pd.jpg"
+            formImage="/assets/images/pd.jpg"
             formTitle="Start Your Real Estate Journey With Us!"
           />
         </div>
