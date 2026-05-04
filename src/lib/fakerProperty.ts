@@ -68,6 +68,17 @@ function generatePhone(): number {
   );
 }
 
+// -------------------- NEW SLUG HELPER --------------------
+
+function createSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "") // remove special chars
+    .trim()
+    .split(/\s+/) // split words
+    .join("-"); // comma separated slug
+}
+
 // -------------------- Main Generator --------------------
 
 export function generateProperty(id: number) {
@@ -77,19 +88,23 @@ export function generateProperty(id: number) {
 
   const phone = generatePhone();
 
+  // ✅ generate title once
+  const title = `${faker.helpers.arrayElement([
+    "Luxury Living",
+    "Modern Home",
+    "Premium Residence",
+    "Elegant Villa",
+    "Skyline Apartment",
+  ])} | ${faker.company.catchPhrase()}`;
+
   return {
     projectData: {
       projectCard: {
         id: String(id),
 
-        title: `${faker.helpers.arrayElement([
-          "Luxury Living",
-          "Modern Home",
-          "Premium Residence",
-          "Elegant Villa",
-          "Skyline Apartment",
-        ])} | ${faker.company.catchPhrase()}`,
+        title,
 
+        // (optional: keep numeric price or format later)
         price: faker.number.int({ min: 900000, max: 8000000 }),
 
         type,
@@ -106,12 +121,12 @@ export function generateProperty(id: number) {
           "Palm Jumeirah",
         ]),
 
-        // ✅ Random buy/rent
         purpose,
 
         amenities: getRandomAmenities(),
 
-        slug: faker.helpers.slugify(`property-${id}-${type}`),
+        // ✅ FIXED SLUG (from title)
+        slug: createSlug(title),
 
         description: faker.lorem.sentences(2),
 

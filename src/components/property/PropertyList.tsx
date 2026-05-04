@@ -23,7 +23,7 @@ export default function PropertyList({ data }: Props) {
                   <PropertyCard
                     property={{
                       ...item,
-                      variant: "small",
+                      variant: "small-card",
                     }}
                     cusClass="listing-cards h-100"
                   />
@@ -32,7 +32,7 @@ export default function PropertyList({ data }: Props) {
                     <PropertyCard
                       property={{
                         ...item,
-                        variant: "large",
+                        variant: "large-card",
                       }}
                       cusClass="listing-cards h-100"
                     />

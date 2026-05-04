@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PropertyCard = ({ property, cusClass }: Props) => {
-  const variant = property.variant || "small";
+  const { variant = "small-card" } = property;
 
   return (
     <div className={`${variant ?? ""}`}>
@@ -19,19 +19,19 @@ const PropertyCard = ({ property, cusClass }: Props) => {
       >
         <div
           className={`card border-0 h-100 ${
-            variant === "large" ? "flex-md-row" : ""
+            variant === "large-card" ? "flex-md-row" : variant
           } ${cusClass}`}
         >
           {/* IMAGE */}
           <div
             className={`position-relative ${
-              variant === "large" ? "col-md-6" : ""
+              variant === "large-card" ? "col-md-6" : ""
             }`}
           >
             <img
               src={property.image}
               className="img-fluid w-100 h-100 object-fit-cover rounded"
-              style={{ minHeight: variant === "large" ? "300px" : "200px" }}
+              style={{ minHeight: variant === "large-card" ? "300px" : "200px" }}
               alt={property.title}
             />
           </div>
@@ -68,7 +68,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
             <div className="d-flex gap-2 action-btns-wrapper">
               <button className="action-btns call-btn">
                 <span>
-                  <img src="assets/images/cal.svg" alt="" className="me-2" />
+                  <img src="/assets/images/cal.svg" alt="" className="me-2" />
                 </span>
                 Call
               </button>
@@ -76,7 +76,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
               <button className="action-btns wahtsapp-btn">
                 <span>
                   <img
-                    src="assets/images/whatsapp1.svg"
+                    src="/assets/images/whatsapp1.svg"
                     alt=""
                     className="me-2"
                   />
@@ -84,11 +84,11 @@ const PropertyCard = ({ property, cusClass }: Props) => {
                 WhatsApp
               </button>
 
-              {variant !== "small" && (
+              {variant !== "small-card" && (
                 <button className="action-btns email-btn">
                   <span>
                     <img
-                      src="assets/images/email.svg"
+                      src="/assets/images/email.svg"
                       alt=""
                       className="me-2"
                     />
@@ -103,7 +103,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
               <p className="small text-muted mb-3">
                 <span>
                   <img
-                    src="assets/images/marker1.svg"
+                    src="/assets/images/marker1.svg"
                     alt=""
                     className="me-2"
                   />

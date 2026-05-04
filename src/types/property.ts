@@ -4,7 +4,7 @@ import { PropertyLocationProp } from "./propertylocation";
 import { PermitProp } from "./permit";
 
 // types/property.ts
-export type PropertyVariant = "small" | "medium" | "large";
+export type PropertyVariant = "small-card" | "medium-card" | "large-card";
 export interface Property {
   id: string;
   slug: string;

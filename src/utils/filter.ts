@@ -58,11 +58,21 @@ export const filterProperties = (data: Property[], filters: Filters) => {
     }
 
     // AMENITIES
-    if (
-      filters.amenities.length &&
-      !filters.amenities.every((a) => (item.amenities || []).includes(a))
-    ) {
-      return false;
+    // AMENITIES (STRICT AND MATCH)
+    if (filters.amenities.length) {
+      const itemAmenities = (item.amenities || []).map((a) =>
+        a.title.toLowerCase(),
+      );
+
+      const selectedAmenities = filters.amenities.map((a) => a.toLowerCase());
+
+      const hasAllAmenities = selectedAmenities.every((a) =>
+        itemAmenities.includes(a),
+      );
+
+      if (!hasAllAmenities) {
+        return false;
+      }
     }
 
     return true;

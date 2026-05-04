@@ -55,7 +55,7 @@ export default function Home() {
                   <PropertyCard
                     property={{
                       ...item.projectData.projectCard,
-                      variant: "small",
+                      variant: "small-card",
                     }}
                   />
                 )}

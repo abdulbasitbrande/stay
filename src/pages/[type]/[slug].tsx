@@ -11,11 +11,19 @@ import PropertyCard from "@/components/PropertyCard";
 import SectionHeading from "@/components/SectionHeading";
 
 export default function DetailPage() {
-  const { query } = useRouter();
+  const router = useRouter();
+  const { query, isReady } = router;
 
+  if (!isReady) return null; // or loading UI
+
+  console.log(query.slug, "slug");
   const property = properties.find(
     (p) => p.projectData.projectCard.slug === query.slug,
   );
+
+  // console.log(property, "property");
+//   console.log("query:", query.slug);
+// console.log("data slugs:", properties.map(p => p.projectData.projectCard.slug));
 
   if (!property) return <div>Loading...</div>;
 
@@ -59,7 +67,7 @@ export default function DetailPage() {
                       <PropertyCard
                         property={{
                           ...item.projectData.projectCard,
-                          variant: "small",
+                          variant: "small-card",
                         }}
                       />
                     )}
