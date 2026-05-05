@@ -19,4 +19,6 @@ export interface Filters {
   };
 
   amenities: string[];
+  purpose: string | null;
+  offplan: boolean;
 }

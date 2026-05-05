@@ -55,10 +55,13 @@ export default function PropertyPage({ purpose }: any) {
           areasize: card.areasize,
           amenities: card.amenities,
           tags: card.tags,
+          offplan: card.offplan,
         };
       });
 
     dispatch(setProperties(data));
+    dispatch(updateFilter({ key: "purpose", value: purpose }));
+    dispatch(applyFilters());
   }, [purpose, dispatch]);
 
   // 2️⃣ URL → Redux (ON PAGE LOAD)
@@ -74,6 +77,7 @@ export default function PropertyPage({ purpose }: any) {
     const sizeMin = searchParams.get("size_min");
     const sizeMax = searchParams.get("size_max");
     const amenities = searchParams.get("amenities");
+    const offplan = searchParams.get("offplan") === "true";
 
     if (type) {
       dispatch(updateFilter({ key: "type", value: type }));
@@ -138,6 +142,10 @@ export default function PropertyPage({ purpose }: any) {
       );
     }
 
+    if (offplan) {
+      dispatch(updateFilter({ key: "offplan", value: true }));
+    }
+
     // apply filters from URL
     dispatch(applyFilters());
   }, [searchParams, dispatch]);
@@ -189,6 +197,10 @@ export default function PropertyPage({ purpose }: any) {
     if (appliedFilters.amenities?.length)
       next.set("amenities", appliedFilters.amenities.join(","));
     else next.delete("amenities");
+
+    // offplan
+    if (appliedFilters.offplan) next.set("offplan", "true");
+    else next.delete("offplan");
 
     const currentStr = searchParams.toString();
     const nextStr = next.toString();

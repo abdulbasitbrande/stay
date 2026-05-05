@@ -14,7 +14,7 @@ const PropertyCard = ({ property, cusClass }: Props) => {
   return (
     <div className={`${variant ?? ""}`}>
       <Link
-        href={`/${property.purpose}/${property.slug}`}
+        href={`/property/${property.slug}`}
         className="text-decoration-none"
       >
         <div

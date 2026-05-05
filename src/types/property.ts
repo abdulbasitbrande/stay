@@ -22,6 +22,7 @@ export interface Property {
     title: string;
     description?: string;
   }[];
+  offplan?: boolean;
   variant?: PropertyVariant;
   tags?: string[];
 }
