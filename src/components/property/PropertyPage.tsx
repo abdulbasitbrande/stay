@@ -284,6 +284,30 @@ export default function PropertyPage({ purpose }: any) {
           </div>
 
           <div className="property-actions d-flex align-items-center gap-3 mt-3 mt-md-0">
+            {/* Offplan Toggle */}
+            {purpose === "buy" && (
+              <>
+                <div className="off-toggle">
+                  <button
+                    type="button"
+                    className={`btn toggle-btn ${appliedFilters.offplan ? "active" : ""}`}
+                    onClick={() => {
+                      dispatch(
+                        updateFilter({
+                          key: "offplan",
+                          value: !appliedFilters.offplan,
+                        }),
+                      );
+                      dispatch(applyFilters());
+                    }}
+                  >
+                    OFFPLAN
+                  </button>
+                </div>
+                <div className="action-divider" />
+              </>
+            )}
+
             {/* View Toggle */}
             <div className="view-toggle d-flex gap-2">
               <button
@@ -304,6 +328,8 @@ export default function PropertyPage({ purpose }: any) {
                 <LayoutGrid size={16} /> GRID
               </button>
             </div>
+
+            <div className="action-divider" />
 
             {/* Sort Dropdown */}
             <div className="sort-box d-flex align-items-center gap-2">

@@ -1518,10 +1518,32 @@ svg.lucide.lucide-chevron-down {
   color: #3b82f6;
 }
 
-.view-toggle button {
+.action-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e5e7eb;
+  margin: 0 4px;
+}
+
+.view-toggle button , .off-toggle button{
   padding: 8px 15px;
   font-family: "inter";
   font-weight: 400;
+}
+
+.badge-offplan {
+    background: #fff;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    font-size: 14px;
+    left: 15px !important;
+    top: 15px !important;
+}
+
+.view-toggle button:hover , .off-toggle button:hover{
+  border-color: currentColor;
+  color: currentColor;
 }
 
 .sort-label {

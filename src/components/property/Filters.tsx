@@ -218,38 +218,45 @@ export default function Filters() {
             {priceOpen && (
               <div className="dropdownMenu">
                 <div className="inputRow">
-                  <input
-                    type="text"
-                    inputMode="numeric"
-                    placeholder="Min AED"
-                    value={priceMinText}
-                    onChange={(e) => {
-                      const raw = e.target.value;
-                      setPriceMinText(raw);
-                      dispatch(
-                        updateFilter({
-                          key: "price",
-                          value: { ...filters.price, min: parsePrice(raw) },
-                        }),
-                      );
-                    }}
-                  />
-                  <input
-                    type="text"
-                    inputMode="numeric"
-                    placeholder="Max AED"
-                    value={priceMaxText}
-                    onChange={(e) => {
-                      const raw = e.target.value;
-                      setPriceMaxText(raw);
-                      dispatch(
-                        updateFilter({
-                          key: "price",
-                          value: { ...filters.price, max: parsePrice(raw) },
-                        }),
-                      );
-                    }}
-                  />
+                  <div className="input-wrap">
+                    <label htmlFor="priceMin" className="mb-2">From</label>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="0"
+                      value={priceMinText}
+                      onChange={(e) => {
+                        const raw = e.target.value;
+                        setPriceMinText(raw);
+                        dispatch(
+                          updateFilter({
+                            key: "price",
+                            value: { ...filters.price, min: parsePrice(raw) },
+                          }),
+                        );
+                      }}
+                    />
+                  </div>
+                  <div className="input-wrap">
+                    <label htmlFor="priceMax" className="mb-2">Upto</label>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="any"
+                      value={priceMaxText}
+                      onChange={(e) => {
+                        const raw = e.target.value;
+                        setPriceMaxText(raw);
+                        dispatch(
+                          updateFilter({
+                            key: "price",
+                            value: { ...filters.price, max: parsePrice(raw) },
+                          }),
+                        );
+                      }}
+                    />
+                  </div>
+
                 </div>
               </div>
             )}
@@ -274,38 +281,45 @@ export default function Filters() {
             {bedsOpen && (
               <div className="dropdownMenu">
                 <div className="inputRow">
-                  <input
-                    type="number"
-                    placeholder="Min Beds"
-                    value={filters.beds.min ?? ""}
-                    onChange={(e) =>
-                      dispatch(
-                        updateFilter({
-                          key: "beds",
-                          value: {
-                            ...filters.beds,
-                            min: e.target.value ? Number(e.target.value) : null,
-                          },
-                        }),
-                      )
-                    }
-                  />
-                  <input
-                    type="number"
-                    placeholder="Max Beds"
-                    value={filters.beds.max ?? ""}
-                    onChange={(e) =>
-                      dispatch(
-                        updateFilter({
-                          key: "beds",
-                          value: {
-                            ...filters.beds,
-                            max: e.target.value ? Number(e.target.value) : null,
-                          },
-                        }),
-                      )
-                    }
-                  />
+                  <div className="input-wrap">
+                    <label htmlFor="minBeds">From</label>
+                    <input
+                      type="number"
+                      placeholder="0"
+                      value={filters.beds.min ?? ""}
+                      onChange={(e) =>
+                        dispatch(
+                          updateFilter({
+                            key: "beds",
+                            value: {
+                              ...filters.beds,
+                              min: e.target.value ? Number(e.target.value) : null,
+                            },
+                          }),
+                        )
+                      }
+                    />
+                  </div>
+                  <div className="input-wrap">
+                    <label htmlFor="maxBeds">Max Beds</label>
+                    <input
+                      type="number"
+                      placeholder="any"
+                      value={filters.beds.max ?? ""}
+                      onChange={(e) =>
+                        dispatch(
+                          updateFilter({
+                            key: "beds",
+                            value: {
+                              ...filters.beds,
+                              max: e.target.value ? Number(e.target.value) : null,
+                            },
+                          }),
+                        )
+                      }
+                    />
+                  </div>
+
                 </div>
               </div>
             )}
@@ -353,6 +367,8 @@ export default function Filters() {
               </div>
             )}
           </div>
+
+
 
           {/* ACTIONS */}
           <div className="actions">
@@ -415,13 +431,20 @@ export default function Filters() {
                   (filters.beds?.max != null ? 1 : 0) +
                   (filters.size?.min != null ? 1 : 0) +
                   (filters.size?.max != null ? 1 : 0) +
-                  (filters.amenities?.length ?? 0)}
+                  (filters.amenities?.length ?? 0) +
+                  (filters.offplan ? 1 : 0)}
               </span>
               <button
                 type="button"
                 className="btn btnGhost"
                 onClick={() => {
+                  const currentPurpose = filters.purpose;
                   dispatch(resetFilters());
+                  if (currentPurpose) {
+                    dispatch(
+                      updateFilter({ key: "purpose", value: currentPurpose }),
+                    );
+                  }
                   dispatch(applyFilters());
                   setSearchTypeahead("");
                   setPriceOpen(false);

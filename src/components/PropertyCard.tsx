@@ -18,15 +18,13 @@ const PropertyCard = ({ property, cusClass }: Props) => {
         className="text-decoration-none"
       >
         <div
-          className={`card border-0 h-100 ${
-            variant === "large-card" ? "flex-md-row" : variant
-          } ${cusClass}`}
+          className={`card border-0 h-100 ${variant === "large-card" ? "flex-md-row" : variant
+            } ${cusClass}`}
         >
           {/* IMAGE */}
           <div
-            className={`position-relative ${
-              variant === "large-card" ? "col-md-6" : ""
-            }`}
+            className={`position-relative ${variant === "large-card" ? "col-md-6" : ""
+              }`}
           >
             <img
               src={property.image}
@@ -34,6 +32,14 @@ const PropertyCard = ({ property, cusClass }: Props) => {
               style={{ minHeight: variant === "large-card" ? "300px" : "200px" }}
               alt={property.title}
             />
+            {property.offplan && (
+              <span
+                className="position-absolute top-0 start-0 border-rounded badge-offplan"
+                style={{ zIndex: 1 }}
+              >
+                Offplan
+              </span>
+            )}
           </div>
 
           {/* CONTENT */}
