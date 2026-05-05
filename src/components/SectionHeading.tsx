@@ -51,7 +51,7 @@ export default function ScrollTextHeading({
       ease: "none",
       scrollTrigger: {
         trigger: ref.current,
-        start: "top-=200 center",
+        start: "top-=300 center",
         end: "bottom center",
         scrub: 1.2,
         // markers: true,
