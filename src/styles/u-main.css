@@ -484,6 +484,12 @@
             .accordion-answer {
                 max-height: 500px;
             }
+
+            .accordion-btn {
+                &::before {
+                    content: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12L18 12' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                }
+            }
         }
     }
 
@@ -492,7 +498,7 @@
         position: relative;
         cursor: pointer;
 
-        h6{
+        h6 {
             max-width: calc(100% - 40px);
         }
     }
@@ -513,6 +519,7 @@
             content: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 12H20M12 4V20' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             display: inline-block;
             line-height: 1;
+            transition: 0.4s all;
 
         }
     }
@@ -530,6 +537,150 @@
             &:last-child {
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+
+
+/* Property Management Banner section */
+.property-management-sec {
+
+    &.has-shape {
+        margin-bottom: -60px;
+    }
+
+    .main-img {
+        -webkit-mask-image: url('/assets/images/property-management-banner-shape.png');
+        mask-image: url('/assets/images/property-management-banner-shape.png');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+}
+
+
+/* Img CTA section */
+.img-cta-sec {
+    position: relative;
+    aspect-ratio: 1/0.5625;
+
+    .contentbox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+
+        .content-wrapper {
+            max-width: 75%;
+            margin: 0 auto;
+            border-radius: 27px;
+            background: rgba(255, 255, 255, 0.80);
+            backdrop-filter: blur(2.5px);
+            padding: 70px 100px;
+
+            .cta-title {
+                margin-bottom: 15px;
+            }
+
+            .separator {
+                display: block;
+                margin: 0 auto 15px;
+                width: 55px;
+                height: 1px;
+                background-color: var(--theme-black);
+
+            }
+
+            .content {
+                margin-bottom: 30px;
+            }
+
+        }
+    }
+}
+
+
+/* Content Section */
+.pm-content-section {
+    position: relative;
+    background-color: transparent;
+    padding: 160px 0 150px;
+
+    #shape-circle {
+        display: none;
+    }
+
+    svg#shape-s {
+        top: 50%;
+        left: -4%;
+    }
+
+    svg#shape-tay {
+        transform: translateY(-38%);
+    }
+
+    .csbgshape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Img Content CTA Section */
+.img-cta-cards-sec {
+    .mainbox {
+        .imgbox {
+            overflow: hidden;
+            aspect-ratio: 1/0.746;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contentbox {
+            h5 {
+                margin-bottom: 15px;
+            }
+
+            .content {
+                margin-bottom: 30px;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* Counter Section */
+.counter-sec {
+    .contentbox {
+        .counter-wrapper {
+            font-size: 100px;
+            color: var(--theme-primary-color);
+            line-height: 1;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            display: block;
+            background-color: var(--border-color);
+            margin: 20px 0;
+        }
+
+        .content {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--theme-primary-color);
         }
     }
 }
