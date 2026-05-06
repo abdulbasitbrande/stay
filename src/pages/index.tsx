@@ -29,6 +29,8 @@ import BlogCard from "@/components/sections/BlogCard";
 import Solution from "@/components/Solution";
 import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 
+// UPDATED WORK TILL NOW
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("buy");
 
