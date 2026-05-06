@@ -22,7 +22,6 @@ export default function LocationBlock({
                         <h4 className="mt-2">{title}</h4>
                         <p>{description}</p>
                         <a className="butn butn-primary-filled" href={link}>Check on Google Maps</a>
-
                     </div>
                 </div>
             </div>
