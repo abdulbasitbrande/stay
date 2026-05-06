@@ -12,7 +12,7 @@ export const Mortgage = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <Layout headerClass="fixed-header">
-            <InnerBannerSection InnerBannerTitle={mortgage.InnerBannerTitle} InnerBannerDescription={mortgage.InnerBannerDescription} InnerBannerButtonText={mortgage.InnerBannerButtonText} InnerBannerButtonLink={mortgage.InnerBannerButtonLink} InnerBannerImage={mortgage.InnerBannerImage} />
+            <InnerBannerSection {...mortgage} />
             <MortgageCalculator />
 
             {/* Faqs Section Start */}
@@ -30,21 +30,19 @@ export const Mortgage = () => {
                     </div>
                     <div className="faqs-wrapper">
                         <div className="row">
-                            {mortgage.FaqsList.map((item, index) => {
-                                console.log('activeIndex:', activeIndex, 'faqKey:', index)
-                                return (
-                                    < div className="col-lg-6" key={index} >
-                                        <AccordionsList faqTitle={item.faqTitle} FaqDescription={item.FaqDescription} faqKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                                    </div>
-                                )
-                            })}
+                            {mortgage.FaqsList.map((item, index) => (
+                                < div className="col-lg-6" key={index} >
+                                    <AccordionsList faqTitle={item.faqTitle} FaqDescription={item.FaqDescription} faqKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                                </div>
+                            )
+                            )}
                         </div>
                     </div>
                 </div>
             </section>
             {/* Faqs Section End */}
 
-            <FormCtaWithImage formTitle="Start Your Real Estate Journey With Us!" formImage="/assets/images/form-cta-img.jpg" />
+            <FormCtaWithImage {...mortgage} />
         </Layout >
 
     );
