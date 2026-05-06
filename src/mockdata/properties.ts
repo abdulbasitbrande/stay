@@ -51,7 +51,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -99,7 +98,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -156,7 +154,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -164,7 +161,7 @@ export const properties: PropertyDetial[] = [
   {
     projectData: {
       projectCard: {
-        offplan: true,
+        offplan: false,
         id: "4",
         title: "Marina Skyline Apartment",
         price: 1250000,
@@ -210,7 +207,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -218,7 +214,7 @@ export const properties: PropertyDetial[] = [
   {
     projectData: {
       projectCard: {
-        offplan: true,
+        offplan: false,
         id: "5",
         title: "Downtown Studio Apartment",
         price: 650000,
@@ -258,14 +254,13 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
   {
     projectData: {
       projectCard: {
-        offplan: true,
+        offplan: false,
         id: "6",
         title: "Downtown Studio Apartment",
         price: 650000,
@@ -302,7 +297,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 6512598500,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -310,7 +304,7 @@ export const properties: PropertyDetial[] = [
   {
     projectData: {
       projectCard: {
-        offplan: true,
+        offplan: false,
         id: "7",
         title: "Marina Sea View Apartment",
         price: 1200000,
@@ -347,7 +341,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 7894561230,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -355,7 +348,7 @@ export const properties: PropertyDetial[] = [
   {
     projectData: {
       projectCard: {
-        offplan: true,
+        offplan: false,
         id: "8",
         title: "Palm Jumeirah Villa",
         price: 5500000,
@@ -392,7 +385,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 1122334455,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -436,7 +428,6 @@ export const properties: PropertyDetial[] = [
       },
       permit: {
         permitNumber: 9988776655,
-        qrcode: "assets/images/qrcode.png",
       },
     },
   },
@@ -504,7 +495,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8647744076,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -571,7 +561,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 5280928967,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -638,7 +627,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 9520413125,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -653,10 +641,10 @@ export const properties: PropertyDetial[] = [
       beds: 0,
       areasize: 2496,
       location: "Dubai Marina",
-      purpose: "buy",
+      purpose: "rent",
       amenities: [
         {
-          title: "play_area"
+          title: "play area"
         },
         {
           title: "view"
@@ -702,7 +690,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7024465429,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -717,7 +704,7 @@ export const properties: PropertyDetial[] = [
       beds: 3,
       areasize: 3590,
       location: "Al Barsha",
-      purpose: "buy",
+      purpose: "rent",
       amenities: [
         {
           title: "pool"
@@ -766,7 +753,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7233686062,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -781,7 +767,7 @@ export const properties: PropertyDetial[] = [
       beds: 1,
       areasize: 3488,
       location: "Silicon Oasis",
-      purpose: "buy",
+      purpose: "rent",
       amenities: [
         {
           title: "garden"
@@ -827,7 +813,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 1710442058,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -891,7 +876,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7614196258,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -949,7 +933,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 1133430065,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1013,7 +996,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 3227021260,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1080,7 +1062,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 6938363580,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1147,7 +1128,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 6721661429,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1205,7 +1185,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 3284378477,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1266,7 +1245,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 5797827958,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1330,7 +1308,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8656675498,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1391,7 +1368,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8844813768,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1455,7 +1431,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 1260169087,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1516,7 +1491,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 4827395000,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1577,7 +1551,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 1686844052,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1641,7 +1614,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8112007782,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1708,7 +1680,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8141673630,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1769,7 +1740,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 9848424889,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1830,7 +1800,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7819524369,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1888,7 +1857,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 6054302436,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -1946,7 +1914,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7964770657,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2007,7 +1974,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 2943958058,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2071,7 +2037,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 9627945559,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2138,7 +2103,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 6483593651,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2196,7 +2160,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 7241339054,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2260,7 +2223,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 8827149306,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 },
@@ -2321,7 +2283,6 @@ export const properties: PropertyDetial[] = [
     },
     permit: {
       permitNumber: 9961689889,
-      qrcode: "assets/images/qrcode.png"
     }
   }
 }

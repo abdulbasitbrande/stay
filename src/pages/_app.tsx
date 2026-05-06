@@ -35,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     const handleRouteChange = async () => {
       setTimeout(async () => {
+        window.scrollTo(0, 0);
         await initJQueryGlobal();
         initJQueryScripts();
       }, 50);

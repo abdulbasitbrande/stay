@@ -446,6 +446,13 @@ a.plain-btn:hover span {
   margin: 0 auto;
 }
 
+.offplan-projects .image-wrapper img {
+    width: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
 /* OFFPLAN SECTION */
 
 /* FEATURE CIRCLE */
@@ -739,6 +746,12 @@ img#faq-bg {
 
 .tags-wrapper {
   margin-top: 10px;
+
+}
+
+.card.small-card .tags-wrapper{
+      min-height: 68px;
+    align-items: flex-start;
 }
 
 .project-section .mt-4.col-12.col-md-6.col-lg-4 .card-body h3 {
@@ -913,6 +926,7 @@ img#faq-bg {
 
 .amenities-list .amenitiy-block {
   max-width: 33.33%;
+  min-width: 33.33%;
 }
 
 .amenities-list .amenitiy-block .title {
@@ -921,6 +935,66 @@ img#faq-bg {
   color: #000000;
   font-weight: 500;
   margin-top: 10px;
+}
+
+.map-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.location-face {
+    background: #fff;
+    position: absolute;
+    padding: 30px 22px;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    width: 40%;
+    border-radius: 12px;
+    border: 1px solid #E3E3E3;
+}
+
+.location-block-map {
+    position: relative;
+    margin-top: 40px;
+}
+
+.location-face h4 {
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.mortgageCalc-block.data-block form.mortgage-box.variant-1 {
+    padding: 0;
+}
+
+.permit-block-qr {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+        margin-top: 20px;
+}
+ .permit-block-qr h4{
+  font-size: 24px;
+}
+
+.permit-block-qr h5, .permit-block-qr h4{
+  font-family: "Inter";
+}
+
+.permit-block-qr h5{
+  color: #2858AB;
+    font-size: 20px;
+}
+
+.data-block h5 {
+    font-family: 'Inter';
+    font-size: 20px;
 }
 
 /* DETAIL PAGE */

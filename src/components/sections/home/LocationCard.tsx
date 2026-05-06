@@ -7,11 +7,18 @@ export default function LocationCard({
   id,
   title,
   description,
-  buttonLink,
   imageSrc,
 }: LocationCardProps) {
+  const toTitleCase = (str: string) =>
+    str
+      .toLowerCase()
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+
+  const formattedTitle = toTitleCase(title);
+  const buyLink = `/buy?search=location:${encodeURIComponent(formattedTitle)}`;
+
   return (
-    <div className="location-card">
+    <Link href={buyLink} className="location-card">
       <div className="card-face-1">
         <img
           className="featured-img"
@@ -37,14 +44,16 @@ export default function LocationCard({
 
         <RichTextRenderer content={description} />
 
-        <Link className="mt-4" href={buttonLink}>
+
+        <div className="mt-4">
           <img
             className="arrow-tilt2"
-            src="/assets/images/arrow-tilt.svg"
+            src="/assets/images/arrow-tilt1.svg"
             alt="Arrow"
           />
-        </Link>
+        </div>
+
       </div>
-    </div>
+    </Link>
   );
 }

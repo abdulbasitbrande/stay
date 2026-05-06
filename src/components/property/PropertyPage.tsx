@@ -146,8 +146,15 @@ export default function PropertyPage({ purpose }: any) {
       dispatch(updateFilter({ key: "offplan", value: true }));
     }
 
+    setIsFiltering(true);
+
     // apply filters from URL
-    dispatch(applyFilters());
+    const timer = setTimeout(() => {
+      dispatch(applyFilters());
+      setIsFiltering(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, [searchParams, dispatch]);
 
   // 3️⃣ Redux → URL (keep query string in sync with applied filters)
@@ -246,9 +253,9 @@ export default function PropertyPage({ purpose }: any) {
   // reset pagination whenever applied filters change
   useEffect(() => {
     setPage(1);
-    setIsFiltering(true);
-    const timer = setTimeout(() => setIsFiltering(false), 300);
-    return () => clearTimeout(timer);
+    // setIsFiltering(true);
+    // const timer = setTimeout(() => setIsFiltering(false), 300);
+    // return () => clearTimeout(timer);
   }, [appliedFilters]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / pageSize));

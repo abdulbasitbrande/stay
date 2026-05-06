@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useMemo } from "react";
+
 import { categoryOptions } from "@/mockdata/home/categoryOptions";
 import { properties } from "@/mockdata/properties";
 import { smartCard } from "@/mockdata/home/smartCard";
@@ -28,6 +30,26 @@ import Solution from "@/components/Solution";
 import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState("buy");
+
+  const filteredProperties = useMemo(() => {
+    let filtered;
+    if (selectedCategory === "off-plan") {
+      filtered = properties.filter((p) => p.projectData.projectCard.offplan === true);
+    } else {
+      filtered = properties.filter(
+        (p) => p.projectData.projectCard.purpose === selectedCategory
+      );
+    }
+    return filtered.slice(0, 10);
+  }, [selectedCategory]);
+
+  const offPlanProperties = useMemo(() => {
+    return properties
+      .filter((p) => p.projectData.projectCard.offplan === true)
+      .slice(-10);
+  }, []);
+
   return (
     <Layout mainClass="homepage">
       <HeroSection />
@@ -43,14 +65,15 @@ export default function Home() {
               <div className="col-lg-5">
                 <CategorySelector
                   options={categoryOptions}
-                  defaultValue="buy"
+                  defaultValue={selectedCategory}
+                  onChange={(value) => setSelectedCategory(value)}
                 />
               </div>
             </div>
 
             <div className="pt-5">
               <Carousel
-                items={properties}
+                items={filteredProperties}
                 renderItem={(item) => (
                   <PropertyCard
                     property={{
@@ -189,8 +212,8 @@ export default function Home() {
 
             <div>
               <Carousel
-                items={offplanProperties}
-                renderItem={(item) => <OffplanProperties {...item} />}
+                items={offPlanProperties}
+                renderItem={(item) => <OffplanProperties key={item.projectData.projectCard.id} title={item.projectData.projectCard.title} image={item.projectData.projectCard.image} location={item.projectData.projectCard.location} tags={item.projectData.projectCard.tags} />}
                 pagination={true}
               />
             </div>

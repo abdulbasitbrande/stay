@@ -1613,6 +1613,11 @@ svg.lucide.lucide-chevron-down {
   font-weight: 500;
 }
 
+  .react-select__menu{
+    z-index: 99999 !important ;
+  }
+
+
 /* --- Responsive Filters --- */
 
 @media (max-width: 1024px) {
@@ -1672,6 +1677,7 @@ svg.lucide.lucide-chevron-down {
   /* .searchContainer :global(.react-select__menu) {
     width: 100%;
   } */
+
 
   .actions {
     flex-direction: column;
