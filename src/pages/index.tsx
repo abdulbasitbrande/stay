@@ -37,10 +37,12 @@ export default function Home() {
   const filteredProperties = useMemo(() => {
     let filtered;
     if (selectedCategory === "off-plan") {
-      filtered = properties.filter((p) => p.projectData.projectCard.offplan === true);
+      filtered = properties.filter(
+        (p) => p.projectData.projectCard.offplan === true,
+      );
     } else {
       filtered = properties.filter(
-        (p) => p.projectData.projectCard.purpose === selectedCategory
+        (p) => p.projectData.projectCard.purpose === selectedCategory,
       );
     }
     return filtered.slice(0, 10);
@@ -215,7 +217,15 @@ export default function Home() {
             <div>
               <Carousel
                 items={offPlanProperties}
-                renderItem={(item) => <OffplanProperties key={item.projectData.projectCard.id} title={item.projectData.projectCard.title} image={item.projectData.projectCard.image} location={item.projectData.projectCard.location} tags={item.projectData.projectCard.tags} />}
+                renderItem={(item) => (
+                  <OffplanProperties
+                    key={item.projectData.projectCard.id}
+                    title={item.projectData.projectCard.title}
+                    image={item.projectData.projectCard.image}
+                    location={item.projectData.projectCard.location}
+                    tags={item.projectData.projectCard.tags}
+                  />
+                )}
                 pagination={true}
               />
             </div>

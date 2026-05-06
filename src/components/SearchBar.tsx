@@ -173,7 +173,7 @@ const SearchBar = () => {
             isClearable
           />
         </div>
-        <div className="col d-flex align-items-center px-3">
+        <div className="col d-flex align-items-center px-3 searchbar-wrap">
           <Search size={18} className="text-secondary me-2" />
           <Select
             isMulti
