@@ -9,6 +9,9 @@ import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 import Carousel from "@/components/Carousel";
 import PropertyCard from "@/components/PropertyCard";
 import SectionHeading from "@/components/SectionHeading";
+import LocationBlock from "@/components/LocationBlock";
+import PermitBlock from "@/components/PermitBlock";
+import AgentCard from "@/components/AgentBlockSidebar";
 
 export default function DetailPage() {
   const router = useRouter();
@@ -16,23 +19,36 @@ export default function DetailPage() {
 
   if (!isReady) return null; // or loading UI
 
-  console.log(query.slug, "slug");
+  // console.log(query.slug, "slug");
   const property = properties.find(
     (p) => p.projectData.projectCard.slug === query.slug,
   );
 
-  // console.log(property, "property");
-//   console.log("query:", query.slug);
-// console.log("data slugs:", properties.map(p => p.projectData.projectCard.slug));
-
   if (!property) return <div>Loading...</div>;
 
+  const currentPurpose = property.projectData.projectCard.purpose;
+  const currentType = property.projectData.projectCard.type;
+
   const projectCard = property.projectData.projectCard;
+  const propertyLocation = property.projectData.propertyLocation;
+  const propertyPermit = property.projectData.permit;
+  const propertyGallery = property.projectData.gallery;
+  const propertyAgent = property.projectData.agent;
+
+  const relatedProperties = properties.filter((item) => {
+    const card = item.projectData.projectCard;
+
+    // exclude current property
+    if (card.slug === query.slug) return false;
+
+    // strict match: BOTH must match
+    return card.purpose === currentPurpose && card.type === currentType;
+  });
 
   return (
     <Layout>
       <div className="project-detail pt-5">
-        <Gallery galleryItem={property.projectData.gallery.galleryItem} />
+        <Gallery galleryItem={propertyGallery.galleryItem} />
 
         <div className="container project-data">
           <div className="row">
@@ -45,9 +61,20 @@ export default function DetailPage() {
               />
               <PropertyAmenitiesBlock amenities={projectCard.amenities} />
               <MortgageCalculatorForm variant={1} />
+              <LocationBlock
+                title={propertyLocation.title}
+                description={propertyLocation.description}
+                link={propertyLocation.link}
+              />
+              <PermitBlock
+                qrcode={propertyPermit.qrcode}
+                permitNumber={propertyPermit.permitNumber}
+              />
             </div>
 
-            <div className="col-md-4 project-sidebar ps-3 ps-lg-5"></div>
+            <div className="col-md-4 project-sidebar">
+              <AgentCard {...propertyAgent} />
+            </div>
           </div>
         </div>
         <div className="row">
@@ -62,13 +89,14 @@ export default function DetailPage() {
 
                 <div className="pt-5">
                   <Carousel
-                    items={properties}
+                    items={relatedProperties}
                     renderItem={(item) => (
                       <PropertyCard
                         property={{
                           ...item.projectData.projectCard,
                           variant: "small-card",
                         }}
+                        agent={item.projectData.agent}
                       />
                     )}
                   />

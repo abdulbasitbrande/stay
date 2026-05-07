@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useMemo } from "react";
+
 import { categoryOptions } from "@/mockdata/home/categoryOptions";
 import { properties } from "@/mockdata/properties";
 import { smartCard } from "@/mockdata/home/smartCard";
@@ -27,7 +29,35 @@ import BlogCard from "@/components/sections/BlogCard";
 import Solution from "@/components/Solution";
 import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 
+// UPDATED WORK TILL NOW
+
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState("buy");
+
+  const filteredProperties = useMemo(() => {
+    let filtered;
+    if (selectedCategory === "off-plan") {
+      filtered = properties.filter(
+        (p) => p.projectData.projectCard.offplan === true,
+      );
+    } else {
+      filtered = properties.filter(
+        (p) => p.projectData.projectCard.purpose === selectedCategory,
+      );
+    }
+    return filtered.slice(0, 10);
+  }, [selectedCategory]);
+
+  const offPlanProperties = useMemo(() => {
+    return properties
+      .filter((p) => p.projectData.projectCard.offplan === true)
+      .slice(-10);
+  }, []);
+
+  const filtereBlogs = useMemo(() => {
+    return blogs.filter((item) => item.category === "blog").slice(0, 10);
+  }, []);
+
   return (
     <Layout mainClass="homepage">
       <HeroSection />
@@ -43,20 +73,22 @@ export default function Home() {
               <div className="col-lg-5">
                 <CategorySelector
                   options={categoryOptions}
-                  defaultValue="buy"
+                  defaultValue={selectedCategory}
+                  onChange={(value) => setSelectedCategory(value)}
                 />
               </div>
             </div>
 
             <div className="pt-5">
               <Carousel
-                items={properties}
+                items={filteredProperties}
                 renderItem={(item) => (
                   <PropertyCard
                     property={{
                       ...item.projectData.projectCard,
                       variant: "small-card",
                     }}
+                    agent={item.projectData.agent}
                   />
                 )}
               />
@@ -172,25 +204,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* <div className="row align-items-center">
-              <div className="col-lg-7">
-                <SectionHeading text="" />
-              </div>
-
-              <div className="col-lg-5 text-end">
-                <Link href="/" className="plain-btn mt-5">
-                  See more
-                  <span>
-                    <img src="assets/images/arrow-tilt1.svg" alt="" />
-                  </span>
-                </Link>
-              </div>
-            </div> */}
-
             <div>
               <Carousel
-                items={offplanProperties}
-                renderItem={(item) => <OffplanProperties {...item} />}
+                items={offPlanProperties}
+                renderItem={(item) => (
+                  <OffplanProperties
+                    key={item.projectData.projectCard.id}
+                    title={item.projectData.projectCard.title}
+                    image={item.projectData.projectCard.image}
+                    location={item.projectData.projectCard.location}
+                    tags={item.projectData.projectCard.tags}
+                    slug={item.projectData.projectCard.slug}
+                  />
+                )}
                 pagination={true}
               />
             </div>
@@ -290,17 +316,8 @@ export default function Home() {
           </div>
           <div className="realted-insights-wrapper">
             <Carousel
-              items={blogs}
-              renderItem={(blog) => (
-                <BlogCard
-                  id={blog.id}
-                  title={blog.title}
-                  date={blog.date}
-                  image={blog.image}
-                  slug={blog.slug}
-                  hasCategory={blog.hasCategory}
-                />
-              )}
+              items={filtereBlogs}
+              renderItem={(item) => <BlogCard data={item} hasCategory={true} />}
               pagination={true}
               enabled={{ desktop: false }}
               gridCols={{ desktop: 3 }}

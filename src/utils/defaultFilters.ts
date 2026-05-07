@@ -10,4 +10,6 @@ export const defaultFilters: Filters = {
   size: { min: null, max: null },
 
   amenities: [],
+  purpose: null,
+  offplan: false,
 };

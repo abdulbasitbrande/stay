@@ -40,6 +40,7 @@ export default function PropertyPage({ purpose }: any) {
       .filter((p) => p.projectData.projectCard.purpose === purpose)
       .map((p) => {
         const card = p.projectData.projectCard;
+        const agent = p.projectData.agent;
 
         return {
           id: card.id,
@@ -55,10 +56,14 @@ export default function PropertyPage({ purpose }: any) {
           areasize: card.areasize,
           amenities: card.amenities,
           tags: card.tags,
+          offplan: card.offplan,
+          agent: agent,
         };
       });
 
     dispatch(setProperties(data));
+    dispatch(updateFilter({ key: "purpose", value: purpose }));
+    dispatch(applyFilters());
   }, [purpose, dispatch]);
 
   // 2️⃣ URL → Redux (ON PAGE LOAD)
@@ -74,6 +79,7 @@ export default function PropertyPage({ purpose }: any) {
     const sizeMin = searchParams.get("size_min");
     const sizeMax = searchParams.get("size_max");
     const amenities = searchParams.get("amenities");
+    const offplan = searchParams.get("offplan") === "true";
 
     if (type) {
       dispatch(updateFilter({ key: "type", value: type }));
@@ -138,8 +144,19 @@ export default function PropertyPage({ purpose }: any) {
       );
     }
 
+    if (offplan) {
+      dispatch(updateFilter({ key: "offplan", value: true }));
+    }
+
+    setIsFiltering(true);
+
     // apply filters from URL
-    dispatch(applyFilters());
+    const timer = setTimeout(() => {
+      dispatch(applyFilters());
+      setIsFiltering(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, [searchParams, dispatch]);
 
   // 3️⃣ Redux → URL (keep query string in sync with applied filters)
@@ -190,6 +207,10 @@ export default function PropertyPage({ purpose }: any) {
       next.set("amenities", appliedFilters.amenities.join(","));
     else next.delete("amenities");
 
+    // offplan
+    if (appliedFilters.offplan) next.set("offplan", "true");
+    else next.delete("offplan");
+
     const currentStr = searchParams.toString();
     const nextStr = next.toString();
     if (nextStr !== currentStr) {
@@ -234,9 +255,9 @@ export default function PropertyPage({ purpose }: any) {
   // reset pagination whenever applied filters change
   useEffect(() => {
     setPage(1);
-    setIsFiltering(true);
-    const timer = setTimeout(() => setIsFiltering(false), 300);
-    return () => clearTimeout(timer);
+    // setIsFiltering(true);
+    // const timer = setTimeout(() => setIsFiltering(false), 300);
+    // return () => clearTimeout(timer);
   }, [appliedFilters]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / pageSize));
@@ -272,6 +293,30 @@ export default function PropertyPage({ purpose }: any) {
           </div>
 
           <div className="property-actions d-flex align-items-center gap-3 mt-3 mt-md-0">
+            {/* Offplan Toggle */}
+            {purpose === "buy" && (
+              <>
+                <div className="off-toggle">
+                  <button
+                    type="button"
+                    className={`btn toggle-btn ${appliedFilters.offplan ? "active" : ""}`}
+                    onClick={() => {
+                      dispatch(
+                        updateFilter({
+                          key: "offplan",
+                          value: !appliedFilters.offplan,
+                        }),
+                      );
+                      dispatch(applyFilters());
+                    }}
+                  >
+                    OFFPLAN
+                  </button>
+                </div>
+                <div className="action-divider" />
+              </>
+            )}
+
             {/* View Toggle */}
             <div className="view-toggle d-flex gap-2">
               <button
@@ -292,6 +337,8 @@ export default function PropertyPage({ purpose }: any) {
                 <LayoutGrid size={16} /> GRID
               </button>
             </div>
+
+            <div className="action-divider" />
 
             {/* Sort Dropdown */}
             <div className="sort-box d-flex align-items-center gap-2">

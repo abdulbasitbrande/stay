@@ -55,9 +55,8 @@ body {
 }
 
 .sec-bg-transparent {
-  background:transparent;
+  background: transparent;
 }
-
 
 .sec-bg {
   position: absolute;
@@ -133,7 +132,7 @@ h6 {
     max-width: 64%;
   }
 
-  .has-btn{
+  .has-btn {
     margin-bottom: 30px;
   }
 
@@ -589,20 +588,20 @@ header {
     display: flex;
     align-items: center;
 
-    >.menu-wrapper {
+    > .menu-wrapper {
       list-style: none;
       display: flex;
       flex-flow: wrap;
       margin: 0;
       padding: 0;
 
-      >li {
+      > li {
         margin-right: 20px;
         position: relative;
         text-transform: uppercase;
 
         &.menu-item-has-children {
-          >a {
+          > a {
             &::after {
               content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6' fill='none'%3E%3Cpath d='M11.1404 0.580452L6.79378 4.92712C6.28044 5.44045 5.44044 5.44045 4.92711 4.92712L0.580444 0.580452' stroke='black' stroke-width='1.16091' stroke-miterlimit='10' strokeLinecap='round' stroke-linejoin='round'/%3E%3C%2Fsvg%3E");
               font-weight: 700;
@@ -791,7 +790,7 @@ header {
   }
 
   ul {
-    >li {
+    > li {
       font-size: 18px;
       text-transform: uppercase;
       font-weight: 300;
@@ -799,14 +798,14 @@ header {
 
       &.current-menu-item,
       &:hover {
-        >a {
+        > a {
           &::before {
             width: 100%;
           }
         }
       }
 
-      >a {
+      > a {
         text-decoration: none;
         color: var(--theme-white);
         text-decoration: none;
@@ -1257,6 +1256,20 @@ header {
   background: #000;
 }
 
+.custom-select__value-container .custom-select__multi-value, .react-select__value-container .react-select__multi-value {
+    padding: 8px 8px;
+    background: #2d2d2d;
+    border-radius: 5px;
+}
+
+.custom-select__value-container .custom-select__multi-value .custom-select__multi-value__label, .react-select__value-container .react-select__multi-value .react-select__multi-value__label {
+    color: #fff !important;
+}
+
+.custom-select__value-container .custom-select__multi-value__remove svg, .react-select__value-container .react-select__multi-value__remove svg {
+    fill: #fff;
+}
+
 /* React Select Overrides */
 .filtersContainer .selectContainer {
   flex-grow: 1;
@@ -1498,7 +1511,7 @@ header {
   font-weight: 400 !important;
 }
 
-.react-select__indicators>span {
+.react-select__indicators > span {
   display: none;
 }
 
@@ -1543,10 +1556,34 @@ svg.lucide.lucide-chevron-down {
   color: #3b82f6;
 }
 
-.view-toggle button {
+.action-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e5e7eb;
+  margin: 0 4px;
+}
+
+.view-toggle button,
+.off-toggle button {
   padding: 8px 15px;
   font-family: "inter";
   font-weight: 400;
+}
+
+.badge-offplan {
+  background: #fff;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-size: 14px;
+  left: 15px !important;
+  top: 15px !important;
+}
+
+.view-toggle button:hover,
+.off-toggle button:hover {
+  border-color: currentColor;
+  color: currentColor;
 }
 
 .sort-label {
@@ -1569,6 +1606,13 @@ svg.lucide.lucide-chevron-down {
 
 .advancedActions span {
   color: #000 !important;
+}
+
+.heroSection
+  .search-bar-wrapper
+  .searchbar-wrap
+  .custom-select__dropdown-indicator {
+  display: none;
 }
 
 .cusPagination {
@@ -1614,6 +1658,10 @@ svg.lucide.lucide-chevron-down {
   font-size: 13px;
   color: #374151;
   font-weight: 500;
+}
+
+.react-select__menu {
+  z-index: 99999 !important ;
 }
 
 /* --- Responsive Filters --- */

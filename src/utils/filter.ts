@@ -74,6 +74,16 @@ export const filterProperties = (data: Property[], filters: Filters) => {
         return false;
       }
     }
+    
+    // PURPOSE
+    if (filters.purpose && item.purpose !== filters.purpose) {
+      return false;
+    }
+
+    // OFFPLAN
+    if (filters.offplan && !item.offplan) {
+      return false;
+    }
 
     return true;
   });

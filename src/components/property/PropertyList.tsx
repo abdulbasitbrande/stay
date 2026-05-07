@@ -25,18 +25,18 @@ export default function PropertyList({ data }: Props) {
                       ...item,
                       variant: "small-card",
                     }}
+                    agent={item.agent}
                     cusClass="listing-cards h-100"
                   />
                 ) : (
-                  
-                    <PropertyCard
-                      property={{
-                        ...item,
-                        variant: "large-card",
-                      }}
-                      cusClass="listing-cards h-100"
-                    />
-             
+                  <PropertyCard
+                    property={{
+                      ...item,
+                      variant: "large-card",
+                    }}
+                    agent={item.agent}
+                    cusClass="listing-cards h-100"
+                  />
                 )}
               </div>
             ))}

@@ -3,5 +3,4 @@ export interface LocationCardProps {
   title: string;
   description: string;
   imageSrc: string;
-  buttonLink: string;
 }

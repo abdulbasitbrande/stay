@@ -1,4 +1,4 @@
 export interface PermitProp {
-  qrcode: string;
+  qrcode?: string;
   permitNumber: number;
 }
