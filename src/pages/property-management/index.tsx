@@ -4,6 +4,7 @@ import AccordionsList from "@/components/sections/AccordionsList";
 import FormCtaWithImage from "@/components/sections/FormCtaWithImage";
 import SmartCard from "@/components/sections/home/SmartCard";
 import ImgCtaSection from "@/components/sections/ImgCtaSection";
+import PmImgWithContent from "@/components/sections/PmimgWithContentSection";
 import Stay from "@/components/Stay";
 import { smartCard } from "@/mockdata/home/smartCard";
 import { mortgage } from "@/mockdata/mortgage/mortgage";
@@ -110,107 +111,14 @@ export const PropertyManagement = () => {
                 </div>
             </section>
 
-            <section className="smartcard-section sec-padding">
-                <div className="sec-wrapper smartcard-section-wrapper">
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-lg-7">
-                                <SectionHeading text="Proactive Maintenance and Protection for Long-Term Property Value" />
-                            </div>
-                        </div>
-                        <div className="row pt-5">
-                            {smartCard.map((item, idx) => (
-                                <div
-                                    key={idx}
-                                    className="col-12 col-sm-6 col-md-4 ico-box-wrapper"
-                                >
-                                    <SmartCard {...item} />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <PmImgWithContent title="End-to-end management for seamless property performance" description="<ul>
+    <li>We're boutique by choice, your property is never one of hundreds</li>
+    <li>We're boutique by choice, your property is never one of hundreds</li>
+    <li>We're boutique by choice, your property is never one of hundreds</li>
+    <li>We're boutique by choice, your property is never one of hundreds</li>
+    <li>We're boutique by choice, your property is never one of hundreds</li>
+</ul>" buttonLink="" buttonText="" image="/assets/images/pm-right-img.jpg" customClass="sec-bg-secondary has-only-list-title" imagePosition="right" />
 
-            <section className="img-cta-cards-sec sec-padding">
-                <div className="container">
-                    <div className="sec-title has-gap one-row has-spacing">
-                        <div className="leftbox">
-                            <SectionHeading text="Still on a long-term tenancy? Here's what your property could be earning" />
-                        </div>
-                        <div className="rightbox align-self-md-center">
-                            <div className="content has-btn">
-                                <p>Our managed properties consistently outperform comparable long-term rental rates. Get in touch with us for a complimentary estimate tailored to your property.</p>
-                            </div>
-                            <Link href="#" className="butn butn-primary-filled">
-                                <span>Get my free earnings estimate</span>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <Link href="#" className="d-block mainbox">
-                                <div className="imgbox">
-                                    <img className="fit-img" src="/assets/images/pm-imgcta-img-1.jpg" alt="" />
-                                </div>
-                                <div className="contentbox">
-                                    <h5 className="text-uppercase">Long term rental</h5>
-                                    <div className="content">
-                                        <p>fixed annual income, no flexibility, no ability to react to market demand, tenant relationship to manage, property locked in for 12 months. </p>
-                                    </div>
-                                    <span className="butn butn-primary"><span>Get Free Consultation</span></span>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="col-lg-6">
-                            <Link href="#" className="d-block mainbox">
-                                <div className="imgbox">
-                                    <img className="fit-img" src="/assets/images/pm-imgcta-img-2.jpg" alt="" />
-                                </div>
-                                <div className="contentbox">
-                                    <h5 className="text-uppercase">Get Free Consultation</h5>
-                                    <div className="content">
-                                        <p>fixed annual income, no flexibility, no ability to react to market demand, tenant relationship to manage, property locked in for 12 months. </p>
-                                    </div>
-                                    <span className="butn butn-primary"><span>Get Free Consultation</span></span>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <ImgCtaSection />
-
-            {/* Faqs Section Start */}
-            <section className="faqs-sec sec-padding --large">
-                <div className="container">
-                    <div className="sec-title one-row has-spacing">
-                        <div className="leftbox">
-                            <SectionHeading text="Strategic entry into Dubai’s most sought after off-plan launches." />
-                        </div>
-                        <div className="rightbox align-self-md-center">
-                            <Link href="#" className="butn butn-primary-filled">
-                                <span>Get In Touch With Us!</span>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="faqs-wrapper">
-                        <div className="row">
-                            {mortgage.FaqsList.map((item, index) => (
-                                < div className="col-lg-6" key={index} >
-                                    <AccordionsList faqTitle={item.faqTitle} FaqDescription={item.FaqDescription} faqKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                                </div>
-                            )
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* Faqs Section End */}
-
-            <FormCtaWithImage formTitle="Start Your Real Estate Journey With Us!" formImage="/assets/images/form-cta-img.jpg   " />
         </Layout>
     );
 }

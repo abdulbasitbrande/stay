@@ -25,39 +25,33 @@ export default function Header({ headerClass }: HeaderProps) {
               <nav className="header-menu">
                 <ul className="menu-wrapper">
                   <li>
-                    <Link href="/insights">Buy</Link>
+                    <Link href="/buy">Buy</Link>
                   </li>
                   <li>
-                    <Link href="/">Rent</Link>
+                    <Link href="/rent">Rent</Link>
                   </li>
                   <li>
-                    <Link href="/">Off-Plan</Link>
+                    <Link href="/buy?offplan=true">Off-Plan</Link>
+                  </li>
+                  {/* <li>
+                    <Link href="#">Property Management</Link>
+                  </li> */}
+                  <li>
+                    <Link href="/mortgage-calculator">Mortgage Calculator</Link>
                   </li>
                   <li>
-                    <Link href="/">Property Management</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Estimate My Property</Link>
+                    <Link href="/careers">Careers</Link>
                   </li>
                   <li className="menu-item-has-children">
                     <Link href="/">More</Link>
                     <ul className="sub-menu">
                       <li>
-                        <Link href="/">Link 01</Link>
-                      </li>
-                      <li>
-                        <Link href="/">Link 02</Link>
-                      </li>
-                      <li>
-                        <Link href="/">Link 03</Link>
-                      </li>
-                      <li>
-                        <Link href="/">Link 04</Link>
+                        <Link href="/about-us">About Us</Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <Link href="/">Contact</Link>
+                    <Link href="/contact-us">Contact</Link>
                   </li>
                 </ul>
               </nav>
@@ -175,39 +169,33 @@ export default function Header({ headerClass }: HeaderProps) {
           </div>
           <ul className="header-nav list-unstyled m-0 p-0">
             <li>
-              <Link href="/">Buy</Link>
+              <Link href="/buy">Buy</Link>
             </li>
             <li>
-              <Link href="/">Rent</Link>
+              <Link href="/rent">Rent</Link>
             </li>
             <li>
-              <Link href="/">Off-Plan</Link>
+              <Link href="/buy?offplan=true">Off-Plan</Link>
+            </li>
+            {/* <li>
+                    <Link href="#">Property Management</Link>
+                  </li> */}
+            <li>
+              <Link href="/mortgage-calculator">Mortgage Calculator</Link>
             </li>
             <li>
-              <Link href="/">Property Management</Link>
-            </li>
-            <li>
-              <Link href="/">Estimate My Property</Link>
+              <Link href="/careers">Careers</Link>
             </li>
             <li className="menu-item-has-children">
               <Link href="/">More</Link>
               <ul className="sub-menu">
                 <li>
-                  <Link href="/">Facility 01</Link>
-                </li>
-                <li>
-                  <Link href="/">Facility 02</Link>
-                </li>
-                <li>
-                  <Link href="/">Facility 03</Link>
-                </li>
-                <li>
-                  <Link href="/">Facility 04</Link>
+                  <Link href="/about-us">About Us</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact-us">Contact</Link>
             </li>
           </ul>
           <div className="social-links">
