@@ -3,4 +3,5 @@ export interface Offplanproperties {
   image: string;
   tags?: string[];
   location: string;
+  slug:string;
 }

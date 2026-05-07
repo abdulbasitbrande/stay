@@ -11,6 +11,7 @@ import PropertyCard from "@/components/PropertyCard";
 import SectionHeading from "@/components/SectionHeading";
 import LocationBlock from "@/components/LocationBlock";
 import PermitBlock from "@/components/PermitBlock";
+import AgentCard from "@/components/AgentBlockSidebar";
 
 export default function DetailPage() {
   const router = useRouter();
@@ -32,6 +33,7 @@ export default function DetailPage() {
   const propertyLocation = property.projectData.propertyLocation;
   const propertyPermit = property.projectData.permit;
   const propertyGallery = property.projectData.gallery;
+  const propertyAgent = property.projectData.agent;
 
   const relatedProperties = properties.filter((item) => {
     const card = item.projectData.projectCard;
@@ -40,10 +42,7 @@ export default function DetailPage() {
     if (card.slug === query.slug) return false;
 
     // strict match: BOTH must match
-    return (
-      card.purpose === currentPurpose &&
-      card.type === currentType
-    );
+    return card.purpose === currentPurpose && card.type === currentType;
   });
 
   return (
@@ -62,11 +61,20 @@ export default function DetailPage() {
               />
               <PropertyAmenitiesBlock amenities={projectCard.amenities} />
               <MortgageCalculatorForm variant={1} />
-              <LocationBlock title={propertyLocation.title} description={propertyLocation.description} link={propertyLocation.link} />
-              <PermitBlock qrcode={propertyPermit.qrcode} permitNumber={propertyPermit.permitNumber} />
+              <LocationBlock
+                title={propertyLocation.title}
+                description={propertyLocation.description}
+                link={propertyLocation.link}
+              />
+              <PermitBlock
+                qrcode={propertyPermit.qrcode}
+                permitNumber={propertyPermit.permitNumber}
+              />
             </div>
 
-            <div className="col-md-4 project-sidebar ps-3 ps-lg-5"></div>
+            <div className="col-md-4 project-sidebar">
+              <AgentCard {...propertyAgent} />
+            </div>
           </div>
         </div>
         <div className="row">
@@ -88,6 +96,7 @@ export default function DetailPage() {
                           ...item.projectData.projectCard,
                           variant: "small-card",
                         }}
+                        agent={item.projectData.agent}
                       />
                     )}
                   />

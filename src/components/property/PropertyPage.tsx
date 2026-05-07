@@ -40,6 +40,7 @@ export default function PropertyPage({ purpose }: any) {
       .filter((p) => p.projectData.projectCard.purpose === purpose)
       .map((p) => {
         const card = p.projectData.projectCard;
+        const agent = p.projectData.agent;
 
         return {
           id: card.id,
@@ -56,6 +57,7 @@ export default function PropertyPage({ purpose }: any) {
           amenities: card.amenities,
           tags: card.tags,
           offplan: card.offplan,
+          agent: agent,
         };
       });
 

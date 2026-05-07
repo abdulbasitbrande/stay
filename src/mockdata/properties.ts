@@ -37,7 +37,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -84,7 +84,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -140,7 +140,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -193,7 +193,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -240,7 +240,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -283,7 +283,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "SARA ALGHAFARI",
         designation: "Director of Sales",
         email: "example@example.com",
@@ -327,7 +327,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "AHMED KHAN",
         designation: "Senior Property Consultant",
         email: "ahmed@example.com",
@@ -371,7 +371,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "MOHAMMED ALI",
         designation: "Luxury Property Expert",
         email: "mohammed@example.com",
@@ -414,7 +414,7 @@ export const properties: PropertyDetial[] = [
         ],
       },
       agent: {
-        image: "assets/images/agent.jpg",
+        image: "/assets/images/agent.jpg",
         title: "FATIMA NOOR",
         designation: "Property Advisor",
         email: "fatima@example.com",
@@ -481,7 +481,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -547,7 +547,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -613,7 +613,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -676,7 +676,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -739,7 +739,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -799,7 +799,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -862,7 +862,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -919,7 +919,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -982,7 +982,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1048,7 +1048,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1114,7 +1114,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1171,7 +1171,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1231,7 +1231,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1294,7 +1294,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1354,7 +1354,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1417,7 +1417,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1477,7 +1477,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1537,7 +1537,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1600,7 +1600,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1666,7 +1666,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1726,7 +1726,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1786,7 +1786,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1843,7 +1843,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1900,7 +1900,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -1960,7 +1960,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -2023,7 +2023,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -2089,7 +2089,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -2146,7 +2146,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -2209,7 +2209,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",
@@ -2269,7 +2269,7 @@ export const properties: PropertyDetial[] = [
       ]
     },
     agent: {
-      image: "assets/images/agent.jpg",
+      image: "/assets/images/agent.jpg",
       title: "SARA ALGHAFARI",
       designation: "Director of Sales",
       email: "example@example.com",

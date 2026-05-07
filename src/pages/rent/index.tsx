@@ -1,5 +1,10 @@
+import Layout from "@/components/layout/Layout";
 import PropertyPage from "@/components/property/PropertyPage";
 
 export default function RentPage() {
-  return <PropertyPage purpose="rent" />;
+  return (
+    <Layout mainClass="buypage">
+      <PropertyPage purpose="rent" />;
+    </Layout>
+  );
 }

@@ -25,6 +25,7 @@ export interface Property {
   offplan?: boolean;
   variant?: PropertyVariant;
   tags?: string[];
+  agent?:AgentProp;
 }
 
 export interface PropertySingle {

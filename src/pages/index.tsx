@@ -54,6 +54,10 @@ export default function Home() {
       .slice(-10);
   }, []);
 
+  const filtereBlogs = useMemo(() => {
+    return blogs.filter((item) => item.category === "blog").slice(0, 10);
+  }, []);
+
   return (
     <Layout mainClass="homepage">
       <HeroSection />
@@ -84,6 +88,7 @@ export default function Home() {
                       ...item.projectData.projectCard,
                       variant: "small-card",
                     }}
+                    agent={item.projectData.agent}
                   />
                 )}
               />
@@ -199,21 +204,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* <div className="row align-items-center">
-              <div className="col-lg-7">
-                <SectionHeading text="" />
-              </div>
-
-              <div className="col-lg-5 text-end">
-                <Link href="/" className="plain-btn mt-5">
-                  See more
-                  <span>
-                    <img src="assets/images/arrow-tilt1.svg" alt="" />
-                  </span>
-                </Link>
-              </div>
-            </div> */}
-
             <div>
               <Carousel
                 items={offPlanProperties}
@@ -224,6 +214,7 @@ export default function Home() {
                     image={item.projectData.projectCard.image}
                     location={item.projectData.projectCard.location}
                     tags={item.projectData.projectCard.tags}
+                    slug={item.projectData.projectCard.slug}
                   />
                 )}
                 pagination={true}
@@ -325,17 +316,8 @@ export default function Home() {
           </div>
           <div className="realted-insights-wrapper">
             <Carousel
-              items={blogs}
-              renderItem={(blog) => (
-                <BlogCard
-                  id={blog.id}
-                  title={blog.title}
-                  date={blog.date}
-                  image={blog.image}
-                  slug={blog.slug}
-                  hasCategory={blog.hasCategory}
-                />
-              )}
+              items={filtereBlogs}
+              renderItem={(item) => <BlogCard data={item} hasCategory={true} />}
               pagination={true}
               enabled={{ desktop: false }}
               gridCols={{ desktop: 3 }}

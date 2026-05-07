@@ -1253,6 +1253,20 @@ header {
   background: #000;
 }
 
+.custom-select__value-container .custom-select__multi-value, .react-select__value-container .react-select__multi-value {
+    padding: 8px 8px;
+    background: #2d2d2d;
+    border-radius: 5px;
+}
+
+.custom-select__value-container .custom-select__multi-value .custom-select__multi-value__label, .react-select__value-container .react-select__multi-value .react-select__multi-value__label {
+    color: #fff !important;
+}
+
+.custom-select__value-container .custom-select__multi-value__remove svg, .react-select__value-container .react-select__multi-value__remove svg {
+    fill: #fff;
+}
+
 /* React Select Overrides */
 .filtersContainer .selectContainer {
   flex-grow: 1;
