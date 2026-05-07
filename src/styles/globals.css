@@ -125,6 +125,9 @@ h6 {
 
 /* Section Title */
 .sec-title {
+  &.\--is-small {
+    max-width: 50%;
+  }
   &.\--is-medium {
     max-width: 64%;
   }

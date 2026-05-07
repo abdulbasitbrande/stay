@@ -14,9 +14,10 @@ type FormDataProp = {
     formTitle: string;
     formImage: string;
     sectionClass?: string;
+    imgPosition?: "left" | "right";
 }
 
-export const FormCtaWithImage = ({ formTitle, formImage, sectionClass }: FormDataProp) => {
+export const FormCtaWithImage = ({ formTitle, formImage, sectionClass, imgPosition = "right", }: FormDataProp) => {
 
     const [serviceList, setserviceList] = useState<OptionType | null>({
         value: "real-estate",
@@ -28,9 +29,19 @@ export const FormCtaWithImage = ({ formTitle, formImage, sectionClass }: FormDat
         { value: "property-management", label: "Property Management" },
     ];
     return (
-        <section className={`form-cta-with-img-sec forJqueryOnly  sec-bg-secondary ${sectionClass ?? ""}`}>
+        <section className={`form-cta-with-img-sec forJqueryOnly ${imgPosition === "left" ? "left-img leftBoxforJqueryOnly" : ""}  sec-bg-secondary ${sectionClass ?? ""}`}>
+            <svg className="contactformshape" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="1919" height="1023" viewBox="0 0 1919 1023" fill="none">
+                <path d="M1919 3.29803V1022.3H1418.12H0V138.42C0 116.328 17.9086 98.4198 39.9999 98.4198H1237.11H1367.97C1384.72 98.4198 1400.01 88.9123 1407.43 73.8945L1431.79 24.5253C1439.26 9.40271 1454.71 -0.123047 1471.57 0.0012207L1919 3.29803Z" fill="#F5F5F5" />
+            </svg>
             <div className="container">
                 <div className="row ">
+                    {imgPosition === "left" &&
+                        < div className="col-lg-6">
+                            <div className="imgbox">
+                                <img className="fit-img" src={formImage} alt="" />
+                            </div>
+                        </div>
+                    }
                     <div className="col-lg-6 align-self-lg-center">
                         <div className="form-wrapper has-right-space sec-padding  attach-with-footer">
                             <div className="sec-title has-spacing">
@@ -38,6 +49,7 @@ export const FormCtaWithImage = ({ formTitle, formImage, sectionClass }: FormDat
                             </div>
                             <form>
                                 <div className="row g-0">
+
                                     <div className="col-lg-6">
                                         <div className="input-wrapper">
                                             <label htmlFor="">Your name</label>
@@ -86,15 +98,16 @@ export const FormCtaWithImage = ({ formTitle, formImage, sectionClass }: FormDat
                             </form>
                         </div>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="imgbox">
-                            <img className="fit-img" src={formImage} alt="" />
+                    {imgPosition === "right" &&
+                        < div className="col-lg-6">
+                            <div className="imgbox">
+                                <img className="fit-img" src={formImage} alt="" />
+                            </div>
                         </div>
-                    </div>
-
+                    }
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 
