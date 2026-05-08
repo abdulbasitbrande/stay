@@ -48,6 +48,9 @@ export default function Header({ headerClass }: HeaderProps) {
                       <li>
                         <Link href="/about-us">About Us</Link>
                       </li>
+                      <li>
+                        <Link href="/Insights">Insights</Link>
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -192,6 +195,10 @@ export default function Header({ headerClass }: HeaderProps) {
                 <li>
                   <Link href="/about-us">About Us</Link>
                 </li>
+                <li>
+                  <Link href="/Insights">Insights</Link>
+                </li>
+
               </ul>
             </li>
             <li>

@@ -17,15 +17,15 @@ export const index = () => {
                                         <li>
                                             <h6 className="text-uppercase fw-bold">You can visit us at:</h6>
                                             <Link href="#">Office no. XXXX, The Citadel Tower, Business Bay, Dubai, UAE</Link>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <h6 className="text-uppercase fw-bold">you can email us directly via:</h6>
                                             <Link href="#">information@staydxb.ae</Link>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <h6 className="text-uppercase fw-bold">you can call us directly:</h6>
                                             <Link href="#">+971 4 XXXXXXX</Link>
-                                        </li> 
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
